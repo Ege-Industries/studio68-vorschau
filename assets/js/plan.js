@@ -45,7 +45,9 @@ export function initPlan(data, { onBook }) {
     const ws = addDays(new Date(t.getFullYear(), t.getMonth(), t.getDate()), week * 7), tk = key(t), nm = minsOf(t);
     // Stunden mit Kursen groß, leere Stunden schmal
     const used = new Set(); data.schedule.forEach(c => { for (let m = Math.floor(hm(c.start) / 60) * 60; m < hm(c.end); m += 60) used.add(m / 60); });
-    const h0 = Math.floor(START / 60), h1 = Math.ceil(END / 60), HB = 64, HS = 20, ys = [0];
+    const h0 = Math.floor(START / 60), h1 = Math.ceil(END / 60), ys = [0];
+    const nUsed = [...used].filter(h => h >= h0 && h < h1).length, nFree = (h1 - h0) - nUsed;
+    const HS = 12, HB = Math.max(30, Math.min(52, Math.floor((innerHeight * .56 - nFree * HS - 46) / Math.max(1, nUsed))));
     for (let h = h0; h < h1; h++) ys.push(ys[ys.length - 1] + (used.has(h) ? HB : HS));
     const Y = min => { const h = Math.floor(min / 60), i = Math.max(0, Math.min(h1 - h0, h - h0)); const hh = (ys[i + 1] ?? ys[i]) - ys[i]; return ys[i] + (min % 60) / 60 * hh - (START - h0 * 60) / 60 * ((ys[1] - ys[0])); };
     const hours = []; for (let m = Math.ceil(START / 60) * 60; m <= END; m += 60) hours.push(m);
@@ -73,9 +75,9 @@ export function initPlan(data, { onBook }) {
   }
 
   function renderMobile(t) {
-    const ws = addDays(new Date(t.getFullYear(), t.getMonth(), t.getDate()), week * 7), tk = key(t);
+    const ws = new Date(t.getFullYear(), t.getMonth(), t.getDate()), tk = key(t);
     if (selDay == null) selDay = 0;
-    daysEl.innerHTML = Array.from({ length: 7 }, (_, i) => {
+    daysEl.innerHTML = Array.from({ length: 14 }, (_, i) => {
       const d = addDays(ws, i), has = data.schedule.some(c => c.day === d.getDay() && (!solo || c.disc === solo));
       return `<button class="pd ${i === selDay ? 'on' : ''} ${key(d) === tk ? 'today' : ''}" data-i="${i}" role="tab" aria-selected="${i === selDay}">${DAYS[d.getDay()]}<small>${ddmm(d)}</small><i class="${has ? '' : 'none'}"></i></button>`;
     }).join('');
@@ -83,6 +85,7 @@ export function initPlan(data, { onBook }) {
     const cl = data.schedule.filter(c => c.day === dow && (!solo || c.disc === solo)).sort((a, b) => hm(a.start) - hm(b.start));
     grid.innerHTML = cl.length ? `<div class="pg-list">${cl.map(c => evHTML(c, d, t)).join('')}</div>`
       : `<div class="plan-empty">${DAYS_LONG[dow]}: kein Kurs. ${data.disciplines.some(x => x.open) ? 'Die Muskelfabrik hat trotzdem offen.' : ''}</div>`;
+    if (!grid.dataset.full && cl.length > 5) grid.querySelector('.pg-list').insertAdjacentHTML('beforeend', '');
     const on = daysEl.querySelector('.on'); if (on) daysEl.scrollLeft = on.offsetLeft - daysEl.clientWidth / 2 + on.offsetWidth / 2;
   }
   daysEl.addEventListener('click', e => { const b = e.target.closest('.pd'); if (!b) return; selDay = +b.dataset.i; render(); });
@@ -91,7 +94,7 @@ export function initPlan(data, { onBook }) {
   grid.addEventListener('touchend', e => {
     if (!mq.matches) return;
     const dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 60) { selDay = Math.max(0, Math.min(6, selDay + (dx < 0 ? 1 : -1))); render(); }
+    if (Math.abs(dx) > 60) { selDay = Math.max(0, Math.min(13, selDay + (dx < 0 ? 1 : -1))); render(); }
   }, { passive: true });
 
   grid.addEventListener('click', e => {
@@ -116,6 +119,7 @@ export function initPlan(data, { onBook }) {
     status(t); lastMin = minsOf(t);
   }
   mq.addEventListener('change', render);
+  let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(render, 150); });
   setInterval(() => {
     const t = now();
     clock.textContent = `${DAYS[t.getDay()].toUpperCase()} ${fmtHM(minsOf(t))}:${String(t.getSeconds()).padStart(2, '0')}`;

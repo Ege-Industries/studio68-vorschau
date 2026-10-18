@@ -65,21 +65,21 @@ function meshTexture() {
 }
 
 function bannerTexture(d, i, on) {
-  const c = document.createElement('canvas'); c.width = 1024; c.height = 128;
+  const c = document.createElement('canvas'); c.width = 1024; c.height = 140;
   const g = c.getContext('2d');
-  g.fillStyle = on ? d.color : '#0d0d0f'; g.fillRect(0, 0, 1024, 128);
-  g.fillStyle = on ? '#0d0d0e' : 'rgba(242,241,236,.9)';
-  g.font = '400 84px Anton, Impact, sans-serif'; g.textBaseline = 'middle';
-  g.fillText(`${String(i + 1).padStart(2, '0')}`, 26, 68);
-  g.fillText(d.name.toUpperCase(), 150, 68);
-  g.font = '600 26px "JetBrains Mono", monospace'; g.textAlign = 'right';
-  g.fillText('STUDIO68', 1000, 68);
-  g.fillStyle = on ? '#0d0d0e' : d.color; g.fillRect(0, 0, 10, 128);
+  g.fillStyle = on ? d.color : '#0d0d0f'; g.fillRect(0, 0, 1024, 140);
+  g.fillStyle = on ? '#0d0d0e' : 'rgba(242,241,236,.92)';
+  g.font = '400 100px Anton, Impact, sans-serif'; g.textBaseline = 'middle';
+  g.fillText(`${String(i + 1).padStart(2, '0')}`, 26, 76);
+  let fs = 100; g.font = `400 ${fs}px Anton, Impact, sans-serif`;
+  while (g.measureText(d.name.toUpperCase()).width > 760 && fs > 50) { fs -= 4; g.font = `400 ${fs}px Anton, Impact, sans-serif`; }
+  g.fillText(d.name.toUpperCase(), 170, 76);
+  g.fillStyle = on ? '#0d0d0e' : d.color; g.fillRect(0, 0, 12, 140);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
   return t;
 }
 
-export function initOctagon({ canvas, section, discs, onActive }) {
+export function initOctagon({ canvas, section, discs, label, onActive }) {
   const mob = matchMedia('(max-width: 900px)').matches;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: !mob, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(devicePixelRatio, mob ? 1.5 : 1.75));
@@ -92,7 +92,7 @@ export function initOctagon({ canvas, section, discs, onActive }) {
 
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x09090a, .045);
-  const camera = new THREE.PerspectiveCamera(36, 1, .1, 200);
+  const camera = new THREE.PerspectiveCamera(mob ? 48 : 36, 1, .1, 200);
 
   const cage = new THREE.Group(); scene.add(cage);
 
@@ -139,7 +139,7 @@ export function initOctagon({ canvas, section, discs, onActive }) {
   // Zaun + Banner + Rails
   const alpha = meshTexture();
   const fenceMat = new THREE.MeshStandardMaterial({ color: 0x8d939b, metalness: .9, roughness: .35, alphaMap: alpha, alphaTest: .35, side: THREE.DoubleSide });
-  const banners = [];
+  const banners = [], bannerMeshes = [];
   for (let i = 0; i < N; i++) {
     const a = sideAngle(i), mx = Math.sin(a) * APO, mz = Math.cos(a) * APO;
     const tex = alpha.clone(); tex.repeat.set(SIDE / .2, (FH - .35) / .2); tex.needsUpdate = true;
@@ -153,9 +153,9 @@ export function initOctagon({ canvas, section, discs, onActive }) {
     const d = discs[i] || { name: '', color: '#ff6b1a' };
     const bTex = [bannerTexture(d, i, false), bannerTexture(d, i, true)];
     const bm = new THREE.MeshStandardMaterial({ map: bTex[0], roughness: .55, emissive: 0xffffff, emissiveMap: bTex[1], emissiveIntensity: 0 });
-    const banner = new THREE.Mesh(new THREE.BoxGeometry(SIDE - .3, .3, .16), bm);
-    banner.position.set(Math.sin(a) * (APO + .02), BASE + FH - .02, Math.cos(a) * (APO + .02)); banner.rotation.y = a;
-    cage.add(banner); banners.push(bm);
+    const banner = new THREE.Mesh(new THREE.BoxGeometry(SIDE - .3, .48, .16), bm);
+    banner.position.set(Math.sin(a) * (APO + .03), BASE + FH + .04, Math.cos(a) * (APO + .03)); banner.rotation.y = a;
+    cage.add(banner); banners.push(bm); bannerMeshes.push(banner);
     const rail = new THREE.Mesh(new THREE.CylinderGeometry(.035, .035, SIDE, 8), steel);
     rail.position.set(mx, BASE + .2, mz); rail.rotation.set(0, a, Math.PI / 2); cage.add(rail);
     // Banner-Material: Map wechselt beim Aktivieren
@@ -240,7 +240,7 @@ export function initOctagon({ canvas, section, discs, onActive }) {
     renderer.setSize(W, Hh, false); composer.setSize(W, Hh);
     camera.aspect = W / Hh;
     // Käfig nach rechts (Desktop) bzw. nach oben (Handy) schieben, damit die Karte Platz hat
-    if (mob) camera.setViewOffset(W, Hh, 0, Hh * .17, W, Hh);
+    if (mob) camera.setViewOffset(W, Hh, 0, Hh * .2, W, Hh);
     else camera.setViewOffset(W, Hh, -W * .17, 0, W, Hh);
     camera.updateProjectionMatrix();
   }
@@ -250,6 +250,7 @@ export function initOctagon({ canvas, section, discs, onActive }) {
   // Scroll → Fortschritt
   const ss = x => x * x * x * (x * (x * 6 - 15) + 10);
   let target = 0, cur = 0, active = -1, mx = 0, my = 0, t = 0;
+  const lp = new THREE.Vector3();
   function progress() {
     const r = section.getBoundingClientRect(), total = r.height - innerHeight;
     const p = THREE.MathUtils.clamp(-r.top / Math.max(1, total), 0, 1) * (N - 1);
@@ -291,11 +292,17 @@ export function initOctagon({ canvas, section, discs, onActive }) {
     // Kamera: leichte Parallaxe + Fahrt
     const f = cur - Math.floor(cur), swing = Math.sin(f * Math.PI);
     const hf = Math.atan(Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect);
-    const dist = Math.max(14.5, (RAD * 1.32) / Math.tan(hf));
+    const dist = mob ? (RAD * 1.02) / Math.tan(hf) : Math.max(14.5, (RAD * 1.32) / Math.tan(hf));
     scene.fog.density = .045 * 14.5 / dist;
-    camera.position.set(mx * 1.6, dist * (mob ? .4 : .34) + my * -.8 + swing * .5, dist - swing * .8);
-    camera.lookAt(0, mob ? 1.6 : 1.9, 0);
+    camera.position.set(mx * 1.6, dist * (mob ? .3 : .34) + my * -.8 + swing * .5, dist - swing * .8);
+    camera.lookAt(0, mob ? 1.2 : 1.9, 0);
     composer.render();
+    if (label && bannerMeshes[active]) {
+      bannerMeshes[active].getWorldPosition(lp); lp.y += .62;
+      lp.project(camera);
+      const x = (lp.x + 1) / 2 * W, y = (1 - lp.y) / 2 * Hh;
+      label.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -100%)`;
+    }
   }
   document.addEventListener('visibilitychange', () => { last = performance.now(); loop(); });
 

@@ -4,6 +4,7 @@ import { initPlan } from './plan.js';
 import { initBooking } from './booking.js';
 import { initGenx } from './genx.js';
 import { mountChrome, initChrome } from './chrome.js';
+import { observeReveal, countUp, swiper, teamCards, tiltCards, galleryHTML, lightbox, initPrices, initVoices, hoursHTML, statusHTML, faqHTML } from './components.js';
 
 mountChrome('home');
 
@@ -65,19 +66,21 @@ function bell() {
 
   applyPhotos(data);
   initChrome(data, { home: true });
-  initInsta(data);
   const booking = initBooking(data, { bell });
   initPlan(data, { onBook: o => booking.prefill(o) });
   initTapes(data);
   initOctaCard(data, booking);
+  initTeam(data);
   initStudio(data);
-  initVoices(data);
-  initPrices(data);
+  initVoices(data, $('#voices'), $('#voicesDots'));
+  if (data.reviewCount) $('#revCount').textContent = data.reviewCount;
+  initInsta(data);
+  initPrices(data, $('#preise'));
   initMatchup();
   initContact(data);
-  initCoaches(data);
   initGenx(data);
   initLive(data);
+  observeReveal(); countUp();
   progress(72);
 
   // Hero-Boxsack
@@ -98,7 +101,7 @@ function bell() {
 
   lazy($('#disziplinen'), async () => {
     const { initOctagon } = await import('./octagon.js');
-    const o = initOctagon({ canvas: $('#octaCanvas'), section: $('#disziplinen'), discs: data.disciplines, onActive: i => octaCard(i) });
+    const o = initOctagon({ canvas: $('#octaCanvas'), section: $('#disziplinen'), discs: data.disciplines, label: $('#octaLabel'), onActive: i => octaCard(i) });
     octaGo = o.goTo;
   });
   const dq = new URLSearchParams(location.search).get('d');
@@ -218,8 +221,8 @@ function octaCard(i) {
   $('#ocTag').textContent = x.tagline || '';
   $('#ocText').textContent = x.text || '';
   $('#ocPoints').innerHTML = (x.points || []).map(p => `<li>${esc(p)}</li>`).join('');
-  $('#ocInt').innerHTML = Array.from({ length: 5 }, (_, k) => `<i class="${k < (x.intensity || 0) ? 'on' : ''}"></i>`).join('');
-  $('#ocFor').innerHTML = (x.for || []).map(f => `<span>${esc(f)}</span>`).join('');
+  $('#ocMore').href = `kurse.html#d-${x.id}`;
+  const lab = $('#octaLabel'); if (lab) { lab.style.setProperty('--c', x.color); $('#olN').textContent = String(i + 1).padStart(2, '0'); $('#olName').textContent = x.name; lab.classList.remove('pop'); void lab.offsetWidth; lab.classList.add('pop'); }
   const t = now(), today = new Date(t.getFullYear(), t.getMonth(), t.getDate());
   let times;
   if (x.open) times = d.studio.hours.map(h => `<span class="open">${h.days.length > 1 ? DAYS[h.days[0]] + '–' + DAYS[h.days[h.days.length - 1]] : DAYS[h.days[0]]} ${h.from}–${h.to}</span>`).join('');
@@ -240,93 +243,8 @@ function octaCard(i) {
   card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
 }
 
-// ---------- Studio-Collage + Fakten ----------
-function initStudio(d) {
-  const el = $('#collage'), mq = matchMedia('(max-width: 900px)');
-  const D = [[1, 6, 1, 6], [6, 9, 1, 5], [9, 13, 1, 7], [1, 4, 6, 10], [4, 9, 5, 10], [9, 13, 7, 11], [1, 5, 10, 13], [5, 9, 10, 14], [9, 13, 11, 14]];
-  const M = [[1, 7, 1, 6], [1, 4, 6, 10], [4, 7, 6, 10], [1, 7, 10, 15], [1, 4, 15, 19], [4, 7, 15, 19], [1, 7, 19, 24], [1, 4, 24, 28], [4, 7, 24, 28]];
-  function render() {
-    const L = mq.matches ? M : D, g = (d.gallery || []).slice(0, 8);
-    let html = g.map((p, i) => {
-      const [c1, c2, r1, r2] = L[i] || [1, 7, 1, 5], rot = ((i * 37) % 7 - 3) * .6, film = i === 1;
-      return `<figure class="tile ${film ? 'film' : ''} rv" style="grid-column:${c1}/${c2};grid-row:${r1}/${r2};--r:${rot}deg;--src:url('${esc(new URL(p.src, location.href).href)}')">
-        ${i % 3 === 0 ? `<span class="tp" style="--tr:${rot * 2}deg"></span>` : ''}
-        <div class="ph"><img src="${esc(p.src)}" alt="${esc(p.caption || 'Studio68')}" loading="lazy"></div>
-        <figcaption>${esc(p.caption || '')}</figcaption></figure>`;
-    }).join('');
-    const n = L[g.length] || L[L.length - 1];
-    html += `<div class="note-card rv" style="grid-column:${n[0]}/${n[1]};grid-row:${n[2]}/${n[3]}">Hier zählt nicht, wie du aussiehst. Hier zählt, dass du wiederkommst.<small>— Studio68</small></div>`;
-    el.innerHTML = html;
-    observeReveal(el);
-  }
-  render(); mq.addEventListener('change', render);
-  if (d.video) {
-    const v = $('#videoSlot'); v.hidden = false;
-    v.innerHTML = `<video src="${esc(d.video)}" muted loop playsinline autoplay preload="metadata"></video>`;
-  }
-  if (d.reviewCount) { const f = $$('.fact b')[3]; if (f) f.dataset.count = d.reviewCount; $('#revCount').textContent = d.reviewCount; }
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return; io.unobserve(e.target);
-    const b = e.target, to = +b.dataset.count, pre = b.dataset.prefix || '', t0 = performance.now();
-    (function tick(n) { const p = Math.min(1, (n - t0) / 1600), v = Math.round(to * (1 - Math.pow(1 - p, 4))); b.textContent = pre + v.toLocaleString('de-DE'); if (p < 1) requestAnimationFrame(tick); })(t0);
-  }), { threshold: .6 });
-  $$('.fact b').forEach(b => io.observe(b));
-}
-function observeReveal(root) {
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-  root.querySelectorAll('.rv').forEach(x => io.observe(x));
-}
 
-// ---------- Stimmen ----------
-function initVoices(d) {
-  const st = $('#voices'), dots = $('#voicesDots'), R = d.reviews || [];
-  if (!R.length) { $('#stimmen').hidden = true; return; }
-  st.innerHTML = R.map((r, i) => {
-    let t = esc(r.text); if (r.mark) t = t.replace(esc(r.mark), `<mark>${esc(r.mark)}</mark>`);
-    return `<div class="vq ${i ? '' : 'on'}"><blockquote>${t}“</blockquote><cite>${esc(r.name)} · via Google</cite></div>`;
-  }).join('');
-  dots.innerHTML = R.map((_, i) => `<button class="${i ? '' : 'on'}" aria-label="Bewertung ${i + 1}"></button>`).join('');
-  let i = 0, tm;
-  const show = n => { i = (n + R.length) % R.length; $$('.vq').forEach((q, k) => q.classList.toggle('on', k === i)); $$('#voicesDots button').forEach((b, k) => b.classList.toggle('on', k === i)); clearTimeout(tm); tm = setTimeout(() => show(i + 1), 7000); };
-  dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) show([...dots.children].indexOf(b)); });
-  show(0);
-}
 
-// ---------- Preise ----------
-function initPrices(d) {
-  const P = d.prices; if (!P) return;
-  const sw = $('#durSw'), ind = $('#durInd');
-  let cur = P.durations[P.durations.length - 1];
-  sw.insertAdjacentHTML('beforeend', P.durations.map(m => `<button data-m="${m}" role="tab">${m} MONATE</button>`).join(''));
-  const tk = $('#tickets');
-  tk.innerHTML = P.plans.map((p, i) => `<article class="ticket ${p.featured ? 'featured' : ''} rv">
-    ${p.featured ? '<span class="tk-holo"></span><span class="tk-badge">beliebtester Deal</span>' : ''}
-    <div class="tk-main"><span class="tk-k">TICKET № ${String(i + 1).padStart(2, '0')} ${p.featured ? '· FLATRATE' : ''}</span>
-      <h3 class="tk-name">${esc(p.name)}</h3><p class="tk-desc">${esc(p.desc || '')}</p>
-      ${p.features && p.features.length ? `<ul class="tk-feat">${p.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
-      <div class="tk-price"><b data-plan="${i}">0</b><span>€<br>/ Monat</span></div>
-      <a class="btn tk-cta ${p.featured ? '' : 'btn-line'}" href="#probetraining">Erst gratis testen →</a></div>
-    <div class="tk-stub"><span>ADMIT ONE</span><i class="tk-bar"></i><span>RUNDE 1</span></div></article>`).join('');
-  $('#extras').innerHTML = (P.extras || []).map(x => `<li class="${/kostenlos|gratis/i.test(x.value) ? 'free' : ''}"><span>${esc(x.label)}</span><i></i><b>${esc(x.value)}</b></li>`).join('');
-  const vals = P.plans.map(() => 0);
-  function set(m, anim = true) {
-    cur = m;
-    $$('#durSw button').forEach(b => b.classList.toggle('on', +b.dataset.m === m));
-    const b = sw.querySelector(`[data-m="${m}"]`);
-    ind.style.width = b.offsetWidth + 'px'; ind.style.transform = `translateX(${b.offsetLeft}px)`;
-    P.plans.forEach((p, i) => {
-      const el = tk.querySelector(`[data-plan="${i}"]`), from = vals[i], to = +p.prices[m] || 0, t0 = performance.now();
-      vals[i] = to;
-      if (!anim) { el.textContent = to; return; }
-      (function tick(n) { const q = Math.min(1, (n - t0) / 700), v = Math.round(from + (to - from) * (1 - Math.pow(1 - q, 3))); el.textContent = v; if (q < 1) requestAnimationFrame(tick); })(t0);
-    });
-  }
-  sw.addEventListener('click', e => { const b = e.target.closest('button'); if (b) set(+b.dataset.m); });
-  const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); set(cur); } }, { threshold: .2 });
-  io.observe(tk);
-  addEventListener('resize', () => { const b = sw.querySelector('.on'); if (b) { ind.style.width = b.offsetWidth + 'px'; ind.style.transform = `translateX(${b.offsetLeft}px)`; } });
-  observeReveal(tk);
-}
 
 // ---------- Matchup-Balken ----------
 function initMatchup() {
@@ -337,26 +255,7 @@ function initMatchup() {
   $$('.tt-row').forEach((r, i) => { r.querySelectorAll('i').forEach(x => x.style.transitionDelay = (i * .12) + 's'); io.observe(r); });
 }
 
-// ---------- Kontakt / Öffnungszeiten / FAQ ----------
-function initContact(d) {
-  const t = now(), order = [1, 2, 3, 4, 5, 6, 0], LONG = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
-  $('#hours').innerHTML = order.map(dow => { const h = d.studio.hours.find(x => x.days.includes(dow)); return `<tr class="${dow === t.getDay() ? 'today' : ''}"><td>${LONG[dow]}</td><td>${h ? `${h.from} – ${h.to}` : 'geschlossen'}</td></tr>`; }).join('');
-  $('#faqList').innerHTML = (d.faq || []).map(f => `<details><summary>${esc(f.q)}<i></i></summary><p>${esc(f.a)}</p></details>`).join('');
-  const addr = encodeURIComponent(`${d.studio.street} ${d.studio.zip} ${d.studio.city}`);
-  $('#routeBtn').href = `https://www.google.com/maps/dir/?api=1&destination=${addr}`;
-}
 
-function initCoaches(d) {
-  const C = d.coaches || []; if (!C.length) return;
-  $('#coaches').hidden = false;
-  $('#coachRow').innerHTML = C.map(c => `<article class="coach">${c.photo ? `<img src="${esc(c.photo)}" alt="${esc(c.name)}" loading="lazy">` : ''}<span class="coach-holo"></span>
-    <div class="coach-b"><span class="mono">${esc(c.role || '')}</span><h3>${esc(c.name)}</h3>${c.text ? `<p>${esc(c.text)}</p>` : ''}
-    <div class="coach-stats">${(c.stats || []).map(s => `<div><span>${esc(s.k)}</span><br>${esc(s.v)}</div>`).join('')}</div></div></article>`).join('');
-  $$('.coach').forEach(c => {
-    c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg)`; c.querySelector('.coach-holo').style.backgroundPosition = `${50 + x * 100}% ${50 + y * 100}%`; });
-    c.addEventListener('pointerleave', () => { c.style.transform = ''; });
-  });
-}
 
 // ---------- Live-Status überall ----------
 function initLive(d) {
@@ -370,9 +269,38 @@ function initLive(d) {
   tick(); setInterval(tick, 30000);
 }
 
-// ---------- Instagram-Kachel ----------
+
+// ---------- Team ----------
+function initTeam(d) {
+  const tr = $('#teamTrack'); if (!tr) return;
+  tr.innerHTML = teamCards(d);
+  const A = d.about || {};
+  $('#teamStats').innerHTML = (A.teamStats || []).map(x => `<div><b>${esc(x.v)}</b><span>${esc(x.k)}</span></div>`).join('');
+  swiper(tr); tiltCards(tr);
+}
+
+// ---------- Studio: Galerie zum Wischen ----------
+function initStudio(d) {
+  const g = $('#studioGal'), items = (d.gallery || []).slice(0, 10);
+  g.innerHTML = galleryHTML(items);
+  swiper(g); lightbox(items, g);
+  if (d.reviewCount) { const f = $$('.fact b')[3]; if (f) f.dataset.count = d.reviewCount; }
+  if (d.video) {
+    g.insertAdjacentHTML('afterbegin', `<figure class="gs-i gs-vid"><video src="${esc(d.video)}" muted loop playsinline autoplay preload="metadata"></video></figure>`);
+  }
+}
+
+// ---------- Kontakt + FAQ ----------
+function initContact(d) {
+  $('#hours').innerHTML = hoursHTML(d);
+  const st = statusHTML(d), cs = $('#ctcStatus'); cs.classList.toggle('open', st.open); cs.innerHTML = st.html;
+  $('#faqList').innerHTML = faqHTML(d.faq);
+  $('#routeBtn').href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${d.studio.street} ${d.studio.zip} ${d.studio.city}`)}`;
+}
+
+// ---------- Instagram-Kachel + Wisch-Leiste ----------
 function initInsta(d) {
   const g = $('#igGrid'); if (!g) return;
-  const pics = (d.gallery || []).slice(0, 6);
-  g.innerHTML = pics.map(p => `<span class="wi-p"><img src="${esc(p.src)}" alt="" loading="lazy"><i>♥</i></span>`).join('');
+  g.innerHTML = (d.gallery || []).slice(0, 6).map(p => `<span class="wi-p"><img src="${esc(p.src)}" alt="" loading="lazy"><i>♥</i></span>`).join('');
+  swiper($('#social .sw-track'));
 }

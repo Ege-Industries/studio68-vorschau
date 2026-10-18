@@ -7,42 +7,46 @@ export const FB = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path
 export const PHONE = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>';
 
 const NAV = [
-  ['kurse.html', 'Training', 'kurse'],
-  ['./#plan', 'Plan', 'plan'],
-  ['kids.html', 'Kids', 'kids'],
-  ['ueber-uns.html', 'Über uns', 'ueber'],
-  ['./#preise', 'Preise', 'preise'],
-  ['./#kontakt', 'Kontakt', 'kontakt'],
+  { l: 'Über uns', h: 'ueber-uns.html', k: 'ueber', sub: [['ueber-uns.html#mission', 'Unsere Mission'], ['ueber-uns.html#team', 'Unser Team'], ['ueber-uns.html#galerie', 'Galerie'], ['ueber-uns.html#studio', 'Unser Studio']] },
+  { l: 'Training', h: 'kurse.html', k: 'kurse', sub: [['kurse.html', 'Training & Kurse Fight'], ['muskelfabrik.html', 'Training & Kurse Muskel'], ['kids.html', 'Kids 4–12'], ['kurszeiten.html', 'Kurszeiten'], ['preise.html', 'Preise']] },
+  { l: 'Kurszeiten', h: 'kurszeiten.html', k: 'kurszeiten' },
+  { l: 'Preise', h: 'preise.html', k: 'preise' },
+  { l: 'Partner', h: 'partner.html', k: 'partner' },
+  { l: 'News', h: 'news.html', k: 'news', sub: [['news.html', 'News'], ['presse.html', 'Presse']] },
+  { l: 'Kontakt', h: 'kontakt.html', k: 'kontakt' },
 ];
+const GROUP = { muskelfabrik: 'kurse', kids: 'kurse', presse: 'news' };
 
 export function mountChrome(page) {
-  const home = page === 'home';
-  const nav = NAV.map(([h, l, k]) => `<a href="${home && h.startsWith('./#') ? h.slice(2) : h}" data-k="${k}" class="${k === page ? 'on' : ''}">${l}</a>`).join('');
+  const home = page === 'home', act = GROUP[page] || page;
+  const book = home ? '#probetraining' : './#probetraining';
+  const nav = NAV.map(n => `<div class="nv ${n.sub ? 'has-sub' : ''}"><a href="${n.h}" class="${n.k === act ? 'on' : ''}">${n.l}${n.sub ? '<i class="nv-c"></i>' : ''}</a>${n.sub ? `<div class="nv-sub">${n.sub.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>` : ''}</div>`).join('');
   const top = `
 <header class="hdr" id="hdr">
   <a class="hdr-logo" href="./" aria-label="Studio68 Startseite"><span>studio</span><i>.</i><b>68</b></a>
   <span class="hdr-line"></span>
   <nav class="hdr-nav" aria-label="Hauptnavigation">${nav}</nav>
-  <div class="hdr-round" aria-hidden="true"><span class="hdr-line"></span>${home ? '<span class="hr-txt mono">R<b id="railNo">01</b>/08 · <span id="railName">KOMM REIN</span> · <span id="railClock">5:00</span></span><i class="hr-bar"><i id="railBar"></i></i>' : ''}</div>
+  <span class="hdr-line"></span>
   <span class="hdr-status" id="hdrStatus"><i></i><span>…</span></span>
   <a class="hdr-soc wa js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp schreiben">${WA}</a>
   <a class="hdr-soc ig js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">${IG}</a>
-  <a class="btn btn-pink hdr-cta" href="${home ? '#probetraining' : './#probetraining'}">Probetraining <span class="arr">→</span></a>
+  <a class="btn btn-pink hdr-cta" href="${book}">Probetraining <span class="arr">→</span></a>
   <button class="hdr-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><i></i><i></i></button>
 </header>
 <div class="menu" id="menu" aria-hidden="true">
   <div class="menu-grid"></div>
   <nav class="menu-nav">
-    ${NAV.map(([h, l], i) => `<a href="${home && h.startsWith('./#') ? h.slice(2) : h}"><small>${String(i + 1).padStart(2, '0')}</small>${l}</a>`).join('')}
-    <a href="${home ? '#probetraining' : './#probetraining'}"><small>07</small>Probetraining</a>
+    <a class="mn-home" href="./"><small>00</small>Start</a>
+    ${NAV.map((n, i) => `<div class="mn-g"><a href="${n.h}"><small>${String(i + 1).padStart(2, '0')}</small>${n.l}</a>${n.sub ? `<div class="mn-sub">${n.sub.filter(([h]) => h !== n.h).map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>` : ''}</div>`).join('')}
   </nav>
   <div class="menu-foot">
-    <span class="menu-live" id="menuLive">…</span>
+    <a class="btn btn-pink mn-cta" href="${book}">Probetraining gratis →</a>
     <div class="menu-soc">
       <a class="soc soc-wa js-wa" href="#" target="_blank" rel="noopener">${WA}<span>WhatsApp</span></a>
       <a class="soc soc-ig js-ig" href="#" target="_blank" rel="noopener">${IG}<span>Instagram</span></a>
       <a class="soc soc-tel js-tel" href="#">${PHONE}<span>Anrufen</span></a>
     </div>
+    <span class="menu-live" id="menuLive">…</span>
   </div>
 </div>
 <div class="rail-l" aria-hidden="true">STUDIO68 HEDDESHEIM © <span class="js-year">2026</span> — ALL FIGHTS RESERVED.</div>`;
@@ -55,10 +59,10 @@ export function mountChrome(page) {
     <a class="ftr-big soc-ig js-ig" href="#" target="_blank" rel="noopener">${IG}<span><small class="mono">INSTAGRAM</small>@studio_sixtyeight</span></a>
   </div>
   <div class="ftr-cols">
-    <div><span class="mono">ADRESSE</span><p>Studio68 Heddesheim<br><span class="js-street">Lessingstraße 6</span><br><span class="js-city">68542 Heddesheim</span></p></div>
-    <div><span class="mono">KONTAKT</span><p><a class="js-tel js-telt" href="#">01525 405 854 6</a><br><a class="js-mail js-mailt" href="#">info@studio68-heddesheim.de</a></p></div>
-    <div><span class="mono">SEITEN</span><p><a href="kurse.html">Training & Kurse</a><br><a href="kids.html">Kids</a><br><a href="ueber-uns.html">Über uns</a></p></div>
-    <div><span class="mono">RECHTLICHES</span><p><a href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a><br><a class="js-fb" href="#" target="_blank" rel="noopener">Facebook</a></p></div>
+    <div><span class="mono">STUDIO</span><p>Studio68 Heddesheim<br><span class="js-street">Lessingstraße 6</span><br><span class="js-city">68542 Heddesheim</span><br><a class="js-tel js-telt" href="#">01525 405 854 6</a></p></div>
+    <div><span class="mono">ÜBER UNS</span><p><a href="ueber-uns.html#mission">Unsere Mission</a><br><a href="ueber-uns.html#team">Unser Team</a><br><a href="ueber-uns.html#galerie">Galerie</a><br><a href="ueber-uns.html#studio">Unser Studio</a></p></div>
+    <div><span class="mono">TRAINING</span><p><a href="kurse.html">Kampfsport</a><br><a href="muskelfabrik.html">Muskelfabrik</a><br><a href="kids.html">Kids</a><br><a href="kurszeiten.html">Kurszeiten</a><br><a href="preise.html">Preise</a></p></div>
+    <div><span class="mono">MEHR</span><p><a href="news.html">News</a><br><a href="presse.html">Presse</a><br><a href="partner.html">Partner</a><br><a href="kontakt.html">Kontakt</a><br><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p></div>
   </div>
   <div class="ftr-bot mono"><span>© <span class="js-year">2026</span> STUDIO68 HEDDESHEIM</span><span>TRAIN HARD. FIGHT HARDER.</span><a href="admin/" class="ftr-admin">STUDIO-LOGIN</a></div>
 </footer>
@@ -66,7 +70,7 @@ export function mountChrome(page) {
   <a class="sd-b soc-wa js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp schreiben">${WA}<span class="sd-l">WhatsApp schreiben</span></a>
   <a class="sd-b soc-ig js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram">${IG}<span class="sd-l">@studio_sixtyeight</span></a>
 </div>
-<div class="mbar" id="mbar"><a class="btn btn-pink" href="${home ? '#probetraining' : './#probetraining'}">Probetraining gratis →</a><a class="mbar-i soc-wa js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">${WA}</a><a class="mbar-i soc-ig js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram">${IG}</a></div>
+<div class="mbar" id="mbar"><a class="btn btn-pink" href="${book}">Probetraining gratis →</a><a class="mbar-i soc-wa js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">${WA}</a><a class="mbar-i soc-ig js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram">${IG}</a></div>
 <div class="cursor" id="cursor" aria-hidden="true"><i></i><span>HIT</span></div>`;
   document.body.insertAdjacentHTML('afterbegin', top);
   const main = document.querySelector('main');
@@ -103,26 +107,12 @@ export function initChrome(d, { home = false } = {}) {
   });
   menu.addEventListener('click', e => { if (e.target.closest('a')) { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', false); } });
 
-  const darks = $$('.night, .genx, .tapes, .dark-sec'), rounds = $$('[data-round]'), navA = $$('.hdr-nav a');
-  const railNo = $('#railNo'), railName = $('#railName'), railClock = $('#railClock'), railBar = $('#railBar');
+  const darks = $$('.night, .genx, .tapes, .dark-sec');
   const mbar = $('#mbar'), first = document.querySelector('main > section'), book = $('#probetraining');
-  const map = { disziplinen: 'kurse', plan: 'plan', preise: 'preise', kontakt: 'kontakt', probetraining: 'preise' };
   let ticking = false;
   function onScroll() {
     ticking = false;
     hdr.classList.toggle('dark', darks.some(x => { const r = x.getBoundingClientRect(); return r.top <= 30 && r.bottom > 30; }));
-    if (home && rounds.length) {
-      const mid = innerHeight / 2;
-      const cur = rounds.find(x => { const r = x.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
-      if (cur && railNo) {
-        const r = cur.getBoundingClientRect(), p = Math.min(1, Math.max(0, (mid - r.top) / r.height));
-        railNo.textContent = String(cur.dataset.round).padStart(2, '0'); railName.textContent = cur.dataset.rname;
-        const sec = Math.round((1 - p) * 300); railClock.textContent = `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
-        railBar.style.width = (p * 100) + '%';
-      }
-      const k = cur ? map[cur.id] : null;
-      navA.forEach(a => a.classList.toggle('on', !!k && a.dataset.k === k));
-    }
     const fr = first ? first.getBoundingClientRect() : { bottom: 0 };
     const br = book ? book.getBoundingClientRect() : { top: 1e9, bottom: -1 };
     mbar.classList.toggle('on', fr.bottom < innerHeight * .4 && !(br.top < innerHeight && br.bottom > 0));

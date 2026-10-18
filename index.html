@@ -36,142 +36,112 @@
 
 <main>
 
-<!-- ============ R1 HERO ============ -->
-<section class="hero paper" id="top" data-round="1" data-rname="KOMM REIN">
+<!-- ============ HERO ============ -->
+<section class="hero paper" id="top">
   <div class="cyber-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  <div class="hero-kicker mono"><span class="ast">✳</span> KAMPFSPORT + FITNESS <span class="sep">/</span> HEDDESHEIM <span class="sep">/</span> SEIT JAHREN IM RING</div>
-
-  <figure class="hero-photo" id="heroPhoto">
-    <img src="assets/img/sparring.jpg" alt="Zwei Fäuste mit Bandagen berühren sich im Käfig" data-photo="hero">
-    <figcaption class="mono">IMG_068 // RESPEKT ZUERST</figcaption>
-    <span class="hp-c hp-c1"></span><span class="hp-c hp-c2"></span><span class="hp-c hp-c3"></span><span class="hp-c hp-c4"></span>
-    <div class="hero-tag hand">A fight club by<br><b>Studio68, Heddesheim</b></div>
-    <div class="hero-note hand" id="heroNote">hau drauf!</div>
-  </figure>
-
+  <div class="hero-kicker mono"><span class="ast">✳</span> KAMPFSPORT + FITNESS <span class="sep">/</span> HEDDESHEIM</div>
   <h1 class="hero-title" id="heroTitle" aria-label="Komm rein. Kämpf dich fit.">
     <span class="ht-l"><span class="ht-w">KOMM</span> <span class="ht-w">REIN.</span></span>
     <span class="ht-l"><span class="ht-w">KÄMPF</span> <span class="ht-w">DICH</span></span>
     <span class="ht-l"><span class="ht-w ht-fit">FIT.<svg class="fit-circle" viewBox="0 0 300 160" preserveAspectRatio="none" aria-hidden="true"><path d="M60 128 C 10 100, 18 40, 120 22 C 220 6, 296 40, 286 92 C 276 140, 170 156, 90 146 C 40 140, 20 118, 52 96"/></svg></span></span>
   </h1>
-
-  <div class="hero-film" aria-hidden="true">
-    <div class="film-holes"></div>
-    <img src="assets/img/trophies.jpg" alt="" data-photo="heroSmall">
-    <div class="film-holes"></div>
-  </div>
-
+  <figure class="hero-photo" id="heroPhoto">
+    <img src="assets/img/sparring.jpg" alt="Zwei Fäuste mit Bandagen berühren sich im Käfig" data-photo="hero">
+    <span class="hp-c hp-c1"></span><span class="hp-c hp-c2"></span><span class="hp-c hp-c3"></span><span class="hp-c hp-c4"></span>
+    <div class="hero-tag hand">A fight club by<br><b>Studio68, Heddesheim</b></div>
+    <div class="hero-note hand" id="heroNote">hau drauf!</div>
+    <div class="bag-hud mono" id="bagHud">
+      <div class="bh-big"><b id="hudN">000</b><span>N</span></div>
+      <div class="bh-meter"><i id="hudMeter"></i></div>
+      <div class="bh-row"><span>SCHLÄGE <b id="hudHits">00</b></span><span>MAX <b id="hudMax">000</b></span><button class="bh-snd" id="sndBtn" aria-pressed="true" title="Ton an/aus">♪</button></div>
+    </div>
+  </figure>
+  <div class="hero-film" aria-hidden="true"><div class="film-holes"></div><img src="assets/img/trophies.jpg" alt="" data-photo="heroSmall"><div class="film-holes"></div></div>
   <canvas class="bag-canvas" id="bagCanvas" aria-label="3D-Boxsack zum Draufhauen"></canvas>
-
-  <svg class="scribbles" id="heroScribbles" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
-    <path class="scr scr-ink" id="scrFlame" d="" />
-    <path class="scr scr-ink" id="scrArrow" d="" />
-  </svg>
-
-  <div class="bag-hud mono" id="bagHud">
-    <div class="bh-row"><span>HEAVY BAG // 40 KG</span><button class="bh-snd" id="sndBtn" aria-pressed="true" title="Ton an/aus">♪ AN</button></div>
-    <div class="bh-big"><b id="hudN">000</b><span>NEWTON</span></div>
-    <div class="bh-meter"><i id="hudMeter"></i></div>
-    <div class="bh-row"><span>SCHLÄGE <b id="hudHits">00</b></span><span>MAX <b id="hudMax">000</b> N</span></div>
-  </div>
+  <svg class="scribbles" id="heroScribbles" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path class="scr scr-ink" id="scrFlame" d="" /><path class="scr scr-ink" id="scrArrow" d="" /></svg>
   <div class="bag-combo hand" id="bagCombo"></div>
   <div class="bag-dmg" id="bagDmg"></div>
-  <div class="bag-pop" id="bagPop" role="status">
-    <span class="mono">// AUSWERTUNG</span>
-    <strong>Nicht schlecht.<br>Jetzt in echt?</strong>
-    <a class="btn btn-ink" href="#probetraining">Probetraining gratis →</a>
-  </div>
-
-  <div class="hero-sticker" aria-hidden="true">
-    <svg viewBox="0 0 200 200"><defs><path id="stkC" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
-      <text><textPath href="#stkC">1. TRAINING GRATIS ✳ 1. TRAINING GRATIS ✳ 1. TRAINING GRATIS ✳ </textPath></text></svg>
-    <b>68</b>
-  </div>
-
+  <div class="bag-pop" id="bagPop" role="status"><span class="mono">// AUSWERTUNG</span><strong>Nicht schlecht.<br>Jetzt in echt?</strong><a class="btn btn-ink" href="#probetraining">Probetraining gratis →</a></div>
+  <div class="hero-sticker" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="stkC" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#stkC">1. TRAINING GRATIS ✳ 1. TRAINING GRATIS ✳ 1. TRAINING GRATIS ✳ </textPath></text></svg><b>68</b></div>
   <div class="hero-bottom">
     <a class="btn btn-pink btn-xl" href="#probetraining">Probetraining buchen <span class="arr">⟶</span></a>
-    <a class="btn btn-line" href="#plan">Live-Plan</a>
     <a class="soc-chip soc-wa js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg><span>WhatsApp</span></a>
     <a class="soc-chip soc-ig js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
     <div class="hb-meta mono"><span id="heroNext">nächstes training …</span><span>lessingstraße 6</span></div>
   </div>
 </section>
 
-<!-- ============ TICKER ============ -->
 <div class="tapes" aria-label="Neuigkeiten">
   <div class="tape tape-a"><div class="tape-run" id="tapeA"></div></div>
   <div class="tape tape-b"><div class="tape-run" id="tapeB"></div></div>
 </div>
 
-<!-- ============ R2 DISZIPLINEN / OCTAGON ============ -->
-<section class="octa night" id="disziplinen" data-round="2" data-rname="DISZIPLINEN">
+<!-- ============ KÄFIG / DISZIPLINEN ============ -->
+<section class="octa night" id="disziplinen">
   <div class="octa-sticky">
     <canvas class="octa-canvas" id="octaCanvas" aria-hidden="true"></canvas>
     <div class="octa-vignette"></div>
-    <div class="octa-head">
-      <div class="mono octa-k"><span class="ast">✳</span> R02 // DER KÄFIG</div>
-      <h2 class="octa-h">8 SEITEN.<br><span>8 DISZIPLINEN.</span></h2>
-    </div>
+    <div class="octa-label" id="octaLabel" aria-hidden="true"><b id="olN">01</b><span id="olName">MMA</span></div>
+    <div class="octa-head"><div class="mono octa-k"><span class="ast">✳</span> DER KÄFIG</div><h2 class="octa-h">8 SEITEN. <span>8 DISZIPLINEN.</span></h2></div>
+    <ol class="octa-nav mono" id="octaNav"></ol>
     <div class="octa-card" id="octaCard" aria-live="polite">
       <div class="oc-top mono"><span id="ocIdx">01/08</span><span id="ocSub">MIXED MARTIAL ARTS</span></div>
       <h3 class="oc-name" id="ocName">MMA</h3>
       <p class="oc-tag hand" id="ocTag"></p>
       <p class="oc-text" id="ocText"></p>
       <ul class="oc-points" id="ocPoints"></ul>
-      <div class="oc-meta">
-        <div><span class="mono">INTENSITÄT</span><div class="oc-int" id="ocInt"></div></div>
-        <div><span class="mono">FÜR</span><div class="oc-for" id="ocFor"></div></div>
-      </div>
       <div class="oc-times" id="ocTimes"></div>
       <div class="oc-photo" id="ocPhoto"></div>
-      <a class="btn btn-orange oc-cta" id="ocCta" href="#probetraining">Probetraining <span id="ocCtaName">MMA</span> →</a>
+      <div class="oc-btns"><a class="btn btn-orange oc-cta" id="ocCta" href="#probetraining">Probetraining <span id="ocCtaName">MMA</span> →</a><a class="btn btn-line oc-more" id="ocMore" href="kurse.html">Mehr</a></div>
     </div>
-    <ol class="octa-nav mono" id="octaNav"></ol>
-    <div class="octa-hint mono">SCROLL ↓ DREHT DEN KÄFIG</div>
+    <div class="octa-hint mono">SCROLLEN DREHT DEN KÄFIG ↓</div>
   </div>
 </section>
 
-<!-- ============ R3 LIVE-PLAN ============ -->
-<section class="plan paper" id="plan" data-round="3" data-rname="LIVE-PLAN">
-  <div class="sec-head">
-    <div class="mono sh-k"><span class="ast">✳</span> R03 // TRAININGSPLAN</div>
-    <h2 class="sh-h tech">LIVE<span>—</span>PLAN</h2>
-    <div class="plan-live">
-      <div class="pl-clock"><span class="mono">JETZT</span><b id="plClock">--:--:--</b></div>
-      <div class="pl-now" id="plNow"></div>
-    </div>
+<!-- ============ LIVE-PLAN ============ -->
+<section class="plan paper scr" id="plan">
+  <div class="plan-head">
+    <div><div class="mono sh-k"><span class="ast">✳</span> KURSZEITEN</div><h2 class="plan-h tech">LIVE<span>—</span>PLAN</h2></div>
+    <div class="plan-live"><div class="pl-clock"><span class="mono">JETZT</span><b id="plClock">--:--</b></div><div class="pl-now" id="plNow"></div></div>
   </div>
   <div class="plan-ctrl">
-    <div class="plan-weeks" role="tablist">
-      <button class="pw on" data-week="0" role="tab">Ab heute</button>
-      <button class="pw" data-week="1" role="tab">Woche danach</button>
-    </div>
+    <div class="plan-weeks" role="tablist"><button class="pw on" data-week="0" role="tab">Ab heute</button><button class="pw" data-week="1" role="tab">Woche danach</button></div>
     <div class="plan-filter" id="planFilter"></div>
   </div>
   <div class="plan-days" id="planDays" role="tablist" aria-label="Tag wählen"></div>
   <div class="plan-grid" id="planGrid"></div>
-  <p class="plan-foot mono">AUSFÄLLE WERDEN LIVE VOM STUDIO EINGETRAGEN. KLICK AUF EINEN KURS = PROBETRAINING BUCHEN.</p>
+  <div class="plan-foot"><span class="mono">AUSFÄLLE TRÄGT DAS STUDIO LIVE EIN · KURS ANTIPPEN = PROBETRAINING</span><a class="btn btn-line" href="kurszeiten.html">Alle Kurszeiten →</a></div>
 </section>
 
-<!-- ============ R4 STUDIO ============ -->
-<section class="studio paper-2" id="studio" data-round="4" data-rname="DAS STUDIO">
-  <div class="studio-head">
-    <div class="mono sh-k"><span class="ast">✳</span> R04 // LESSINGSTRASSE 6</div>
-    <h2 class="studio-h">KEIN FITNESS&shy;STUDIO.<br><em>EIN <span class="mark-hi">ZUHAUSE</span></em> FÜR KÄMPFER.</h2>
-    <p class="studio-lede">Kampfsport, Kurse und die Muskelfabrik unter einem Dach. Familiäre Atmosphäre, Coaches mit Titeln und ein Team, das dich nicht als Nummer sieht.</p>
+<!-- ============ TEAM ============ -->
+<section class="team night scr" id="team">
+  <div class="team-head">
+    <div><div class="mono sh-k"><span class="ast">✳</span> UNSER TEAM</div><h2 class="sh-h">IN DEINER <span>ECKE.</span></h2></div>
+    <div class="team-stats" id="teamStats"></div>
   </div>
-  <div class="facts" id="facts">
-    <div class="fact"><b data-count="14">0</b><span>Kurse von Profis</span></div>
-    <div class="fact"><b data-count="7">0</b><span>Tage die Woche</span></div>
-    <div class="fact"><b data-count="2000" data-prefix="~">0</b><span>Kurse im Jahr</span></div>
-    <div class="fact"><b data-count="91">0</b><span>Google-Bewertungen</span></div>
-  </div>
-  <div class="collage" id="collage"></div>
-  <div class="video-slot" id="videoSlot" hidden></div>
+  <div class="sw-wrap"><div class="team-track sw-track" id="teamTrack"></div></div>
+  <a class="btn btn-line team-more" href="ueber-uns.html#team">Das ganze Team →</a>
 </section>
 
-<!-- ============ R5 FIGHT NIGHT (GEN X) ============ -->
-<section class="genx" id="fightnight" data-round="5" data-rname="FIGHT NIGHT">
+<!-- ============ STUDIO ============ -->
+<section class="studio paper-2 scr" id="studio">
+  <div class="studio-l">
+    <div class="mono sh-k"><span class="ast">✳</span> LESSINGSTRASSE 6</div>
+    <h2 class="studio-h">KEIN FITNESS&shy;STUDIO. <span class="mark-hi">EIN ZUHAUSE</span> FÜR KÄMPFER.</h2>
+    <p class="studio-lede">Kampfsport, Kurse und die Muskelfabrik unter einem Dach. Familiär, ehrlich, mit Coaches, die selbst im Ring standen.</p>
+    <div class="facts">
+      <div class="fact"><b data-count="14">0</b><span>Kurse</span></div>
+      <div class="fact"><b data-count="7">0</b><span>Tage / Woche</span></div>
+      <div class="fact"><b data-count="60" data-suffix="+">0</b><span>Jahre Erfahrung</span></div>
+      <div class="fact"><b data-count="91">0</b><span>Bewertungen</span></div>
+    </div>
+    <a class="btn btn-ink studio-cta" href="ueber-uns.html#galerie">Zur Galerie →</a>
+  </div>
+  <div class="sw-wrap studio-r"><div class="gs-track sw-track" id="studioGal"></div></div>
+</section>
+
+<!-- ============ FIGHT NIGHT ============ -->
+<section class="genx scr" id="fightnight">
   <canvas class="genx-bg" id="genxBg" aria-hidden="true"></canvas>
   <div class="genx-grain" aria-hidden="true"></div>
   <div class="genx-scan" aria-hidden="true"></div>
@@ -182,68 +152,54 @@
     <p class="genx-text" id="evText"></p>
     <div class="genx-btns" aria-label="Aktionen">
       <button class="gx-b" id="gxPlay" title="Video ansehen" aria-label="Video ansehen"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-      <a class="gx-b" href="#studio" title="Galerie" aria-label="Galerie"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 4h18v16H3zM5 6v12h14V6zM6.5 16.5l3.5-4.5 2.7 3.4 1.8-2 3 3.1z"/></svg></a>
+      <a class="gx-b" href="ueber-uns.html#galerie" title="Galerie" aria-label="Galerie"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 4h18v16H3zM5 6v12h14V6zM6.5 16.5l3.5-4.5 2.7 3.4 1.8-2 3 3.1z"/></svg></a>
       <a class="gx-b js-ig" href="#" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
       <a class="gx-b js-wa" href="#" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg></a>
     </div>
-
     <div class="reflex" id="reflex">
       <div class="rx-head mono"><span>REFLEX-TEST // 5 VERSUCHE</span><span id="rxTry">0/5</span></div>
-      <button class="rx-pad" id="rxPad" aria-live="assertive">
-        <span class="rx-big" id="rxBig">TIPP ZUM START</span>
-        <span class="rx-small mono" id="rxSmall">Wenn es <b>orange</b> wird: so schnell wie möglich tippen.</span>
-      </button>
+      <button class="rx-pad" id="rxPad" aria-live="assertive"><span class="rx-big" id="rxBig">TIPP ZUM START</span><span class="rx-small mono" id="rxSmall">Wenn es <b>orange</b> wird: so schnell wie möglich tippen.</span></button>
       <div class="rx-res mono" id="rxRes"></div>
     </div>
   </div>
   <div class="genx-video" id="gxVideo" hidden><button class="gxv-x" id="gxClose" aria-label="Schließen">✕</button><div id="gxVideoIn"></div></div>
 </section>
 
-<!-- ============ R6 DU VS DU ============ -->
-<section class="tape-sec paper" id="matchup" data-round="6" data-rname="MATCHUP">
-  <div class="mono sh-k"><span class="ast">✳</span> R06 // TALE OF THE TAPE</div>
+<!-- ============ DU VS DU ============ -->
+<section class="tape-sec paper scr" id="matchup">
+  <div class="mono sh-k"><span class="ast">✳</span> TALE OF THE TAPE</div>
   <div class="tot">
     <div class="tot-side tot-a"><span class="mono">ROTE ECKE</span><b class="tot-du">DU.</b><span class="hand">heute</span></div>
     <div class="tot-vs">VS</div>
-    <div class="tot-side tot-b"><span class="mono">BLAUE ECKE</span><b class="tot-du">DU.</b><span class="hand">nach 12 Wochen</span></div>
+    <div class="tot-side tot-b"><span class="mono">BLAUE ECKE</span><b class="tot-du">DU.</b><span class="hand">in 12 Wochen</span></div>
   </div>
-  <div class="tot-table" id="totTable">
+  <div class="tot-table">
     <div class="tt-row" data-a="28" data-b="82"><span class="tt-l mono">KONDITION</span><div class="tt-bars"><i class="a"></i><i class="b"></i></div></div>
     <div class="tt-row" data-a="10" data-b="70"><span class="tt-l mono">TECHNIK</span><div class="tt-bars"><i class="a"></i><i class="b"></i></div></div>
     <div class="tt-row" data-a="35" data-b="78"><span class="tt-l mono">SCHLAGKRAFT</span><div class="tt-bars"><i class="a"></i><i class="b"></i></div></div>
     <div class="tt-row" data-a="40" data-b="92"><span class="tt-l mono">SELBSTVERTRAUEN</span><div class="tt-bars"><i class="a"></i><i class="b"></i></div></div>
     <div class="tt-row" data-a="95" data-b="3"><span class="tt-l mono">AUSREDEN</span><div class="tt-bars"><i class="a"></i><i class="b"></i></div></div>
   </div>
-  <p class="tot-foot"><span class="hand tot-arrow">↑ wer gewinnt, entscheidest du.</span> <a class="btn btn-ink" href="#probetraining">Kampf annehmen →</a></p>
+  <div class="tot-foot"><span class="hand tot-arrow">wer gewinnt, entscheidest du.</span><a class="btn btn-ink" href="#probetraining">Kampf annehmen →</a></div>
   <p class="tot-small mono">SYMBOLBILD. KEINE VERSPRECHEN, NUR TRAINING.</p>
 </section>
 
-<!-- ============ COACHES (nur wenn eingetragen) ============ -->
-<section class="coaches night" id="coaches" hidden>
-  <div class="mono sh-k"><span class="ast">✳</span> DIE COACHES</div>
-  <h2 class="sh-h">IN DEINER ECKE.</h2>
-  <div class="coach-row" id="coachRow"></div>
-</section>
-
 <!-- ============ STIMMEN ============ -->
-<section class="voices night" id="stimmen">
-  <div class="voices-head">
-    <div class="mono sh-k"><span class="ast">✳</span> NACHGEFRAGT</div>
-    <div class="voices-badge"><b id="revCount">91</b><span>Bewertungen auf Google<br><em>„Ausgezeichnet“</em></span></div>
-  </div>
+<section class="voices night scr" id="stimmen">
+  <div class="voices-head"><div class="mono sh-k"><span class="ast">✳</span> NACHGEFRAGT</div><div class="voices-badge"><b id="revCount">91</b><span>Bewertungen auf Google<br><em>„Ausgezeichnet“</em></span></div></div>
   <div class="voices-stage" id="voices" aria-live="polite"></div>
   <div class="voices-dots" id="voicesDots"></div>
 </section>
 
-<!-- ============ DIREKTER DRAHT: INSTAGRAM + WHATSAPP ============ -->
-<section class="wire paper" id="social">
+<!-- ============ INSTAGRAM + WHATSAPP ============ -->
+<section class="wire paper scr" id="social">
   <div class="mono sh-k"><span class="ast">✳</span> DIREKTER DRAHT</div>
-  <h2 class="sh-h">FOLGEN. FRAGEN.<br><span class="mark-hi">VORBEIKOMMEN.</span></h2>
-  <div class="wire-grid">
+  <h2 class="sh-h wire-h">FOLGEN. FRAGEN. <span class="mark-hi">VORBEIKOMMEN.</span></h2>
+  <div class="sw-wrap"><div class="wire-grid sw-track">
     <a class="wire-ig js-ig" href="#" target="_blank" rel="noopener">
       <div class="wi-head"><span class="wi-logo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span><span><b>@studio_sixtyeight</b><small class="mono">INSTAGRAM</small></span><span class="wi-btn mono">FOLGEN</span></div>
       <div class="wi-grid" id="igGrid"></div>
-      <div class="wi-foot mono">Fights, Technik-Clips, Hausgala, Kids-Erfolge. Jede Woche neu.</div>
+      <div class="wi-foot mono">Fights, Technik-Clips, Hausgala, Kids-Erfolge.</div>
     </a>
     <a class="wire-wa js-wa" href="#" target="_blank" rel="noopener">
       <span class="wa-logo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg></span>
@@ -255,111 +211,86 @@
       <b class="wa-cta">Schreib uns auf WhatsApp →</b>
       <small class="mono">ANTWORT MEIST AM SELBEN TAG</small>
     </a>
-  </div>
+  </div></div>
 </section>
 
-<!-- ============ R7 PREISE ============ -->
-<section class="prices paper" id="preise" data-round="7" data-rname="PREISE">
-  <div class="sec-head">
-    <div class="mono sh-k"><span class="ast">✳</span> R07 // EINTRITTSKARTEN</div>
-    <h2 class="sh-h">DEIN <span class="mark-hi">TICKET</span> IN DEN RING.</h2>
+<!-- ============ PREISE ============ -->
+<section class="prices paper scr" id="preise">
+  <div class="prices-head">
+    <div><div class="mono sh-k"><span class="ast">✳</span> PREISE</div><h2 class="sh-h">DEIN <span class="mark-hi">TICKET</span> IN DEN RING.</h2></div>
+    <div class="dur"><span class="dur-k mono">LAUFZEIT</span><div class="dur-sw"><i class="dur-ind"></i></div></div>
   </div>
-  <div class="dur" id="dur" role="tablist" aria-label="Laufzeit"><span class="dur-k mono">LAUFZEIT</span><div class="dur-sw" id="durSw"><i class="dur-ind" id="durInd"></i></div><span class="hand dur-note">länger = günstiger</span></div>
-  <div class="tickets" id="tickets"></div>
-  <ul class="extras" id="extras"></ul>
+  <div class="sw-wrap"><div class="tickets sw-track"></div></div>
+  <ul class="extras"></ul>
 </section>
 
-<!-- ============ R8 PROBETRAINING ============ -->
-<section class="book night" id="probetraining" data-round="8" data-rname="FINALE">
+<!-- ============ PROBETRAINING ============ -->
+<section class="book night scr" id="probetraining">
   <div class="book-head">
-    <div class="mono sh-k"><span class="ast">✳</span> R08 // FINALE</div>
-    <h2 class="book-h">UNTERSCHREIB<br>DEINEN ERSTEN<br><span>KAMPF&shy;VERTRAG.</span></h2>
-    <p class="book-sub">Erstes Probetraining kostenlos. Kein Vertrag, keine Verpflichtung. Nur du, ein Paar Handschuhe und eine Stunde, die du nicht vergisst.</p>
-    <div class="book-alt"><span class="mono">LIEBER DIREKT?</span>
-      <a class="soc-chip soc-wa js-wa" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg><span>WhatsApp</span></a>
-      <a class="soc-chip soc-ig js-ig" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
-      <a class="soc-chip soc-tel js-tel" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Anrufen</span></a></div>
+    <div class="mono sh-k"><span class="ast">✳</span> PROBETRAINING · KOSTENLOS</div>
+    <h2 class="book-h">UNTERSCHREIB DEINEN ERSTEN <span>KAMPF&shy;VERTRAG.</span></h2>
+    <p class="book-sub">Drei Runden, eine Minute. Kein Vertrag, keine Verpflichtung.</p>
+    <div class="book-alt"><a class="soc-chip soc-wa js-wa" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg><span>WhatsApp</span></a><a class="soc-chip soc-tel js-tel" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Anrufen</span></a></div>
   </div>
-
-  <form class="contract" id="contract" novalidate>
-    <div class="ct-top mono"><span>KAMPFVERTRAG № <b id="ctNo">068-0000</b></span><span>STUDIO68 // HEDDESHEIM</span></div>
-    <h3 class="ct-h">Probetraining</h3>
-
-    <p class="ct-sentence">
-      Ich, <label class="ct-in w-name"><span class="sr">Vor- und Nachname</span><input name="name" id="fName" autocomplete="name" placeholder="Vor- und Nachname" required maxlength="80"></label>,
-      will <button type="button" class="ct-pick" id="pickDisc">Disziplin wählen</button> ausprobieren.
-    </p>
-    <div class="ct-chips" id="discChips" role="listbox" aria-label="Disziplin"></div>
-
-    <p class="ct-sentence" id="ctSlotLine">
-      Mein Probetraining: <button type="button" class="ct-pick" id="pickSlot" disabled>erst Disziplin wählen</button><span class="ct-dot">.</span>
-    </p>
-    <div class="ct-slots" id="slotChips" role="listbox" aria-label="Termin"></div>
-
-    <p class="ct-sentence">
-      Erfahrung: <span class="ct-seg" id="lvlSeg"><button type="button" data-v="keine" class="on">keine</button><button type="button" data-v="etwas">etwas</button><button type="button" data-v="viel">viel</button></span>
-      <span class="ct-kid" id="kidAge" hidden>· Alter des Kindes: <label class="ct-in w-age"><span class="sr">Alter</span><input name="age" inputmode="numeric" maxlength="2" placeholder="Alter"></label></span>
-    </p>
-    <p class="ct-sentence">
-      Erreichbar unter <label class="ct-in w-tel"><span class="sr">Telefon</span><input name="phone" id="fPhone" type="tel" autocomplete="tel" placeholder="Telefon" maxlength="40"></label>
-      und <label class="ct-in w-mail"><span class="sr">E-Mail</span><input name="email" id="fMail" type="email" autocomplete="email" placeholder="E-Mail" maxlength="120"></label><span class="ct-dot">.</span>
-    </p>
-    <label class="ct-msg"><span class="mono">ANMERKUNG (OPTIONAL)</span><textarea name="msg" rows="2" maxlength="600" placeholder="Verletzungen, Fragen, Wünsche …"></textarea></label>
-    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-    <div class="ct-sign">
-      <div class="ct-sigline"><span class="ct-sig" id="ctSig"></span></div>
-      <div class="ct-sigmeta mono"><span>UNTERSCHRIFT</span><span id="ctDate"></span></div>
+  <form class="contract" id="contract" novalidate data-step="1">
+    <div class="ct-top mono"><span>KAMPFVERTRAG № <b id="ctNo">068-0000</b></span><span class="ct-rounds" id="ctRounds"><i class="on">1</i><i>2</i><i>3</i></span></div>
+    <h3 class="ct-h" id="ctH">Runde 1 · Disziplin</h3>
+    <p class="ct-sum" id="ctSum"></p>
+    <div class="ct-step" data-s="1"><div class="ct-chips" id="discChips" role="listbox" aria-label="Disziplin"></div></div>
+    <div class="ct-step" data-s="2"><div class="ct-slots" id="slotChips" role="listbox" aria-label="Termin"></div><button type="button" class="ct-back mono" data-to="1">← andere Disziplin</button></div>
+    <div class="ct-step" data-s="3">
+      <div class="ct-fields">
+        <label class="ct-f w2"><span class="mono">NAME</span><input name="name" id="fName" autocomplete="name" placeholder="Vor- und Nachname" required maxlength="80"></label>
+        <label class="ct-f"><span class="mono">TELEFON</span><input name="phone" id="fPhone" type="tel" autocomplete="tel" placeholder="für die Bestätigung" maxlength="40"></label>
+        <label class="ct-f"><span class="mono">E-MAIL</span><input name="email" id="fMail" type="email" autocomplete="email" placeholder="oder E-Mail" maxlength="120"></label>
+        <div class="ct-f"><span class="mono">ERFAHRUNG</span><span class="ct-seg" id="lvlSeg"><button type="button" data-v="keine" class="on">keine</button><button type="button" data-v="etwas">etwas</button><button type="button" data-v="viel">viel</button></span></div>
+        <label class="ct-f" id="kidAge" hidden><span class="mono">ALTER DES KINDES</span><input name="age" inputmode="numeric" maxlength="2" placeholder="z. B. 7"></label>
+        <label class="ct-f w2"><span class="mono">ANMERKUNG (OPTIONAL)</span><input name="msg" maxlength="600" placeholder="Verletzungen, Fragen …"></label>
+      </div>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="ct-sign"><div class="ct-sigline"><span class="ct-sig" id="ctSig"></span></div><div class="ct-sigmeta mono"><span>UNTERSCHRIFT</span><span id="ctDate"></span></div></div>
+      <label class="ct-consent"><input type="checkbox" name="consent" id="fConsent" required> <span>Ich bin einverstanden, dass das Studio68 meine Angaben zur Vereinbarung des Probetrainings verarbeitet und mich kontaktiert. <a href="datenschutz.html" target="_blank">Datenschutz</a></span></label>
+      <div class="ct-err mono" id="ctErr" role="alert"></div>
+      <div class="ct-go-row"><button type="button" class="ct-back mono" data-to="2">←</button><button class="btn btn-pink ct-go" type="submit" id="ctGo">Kampfvertrag unterschreiben <span class="arr">⟶</span></button></div>
     </div>
-    <label class="ct-consent"><input type="checkbox" name="consent" id="fConsent" required> <span>Ich bin einverstanden, dass das Studio68 meine Angaben zur Vereinbarung des Probetrainings verarbeitet und mich kontaktiert. <a href="datenschutz.html" target="_blank">Datenschutz</a></span></label>
-    <div class="ct-err mono" id="ctErr" role="alert"></div>
-    <button class="btn btn-pink btn-xl ct-go" type="submit" id="ctGo">Kampfvertrag unterschreiben <span class="arr">⟶</span></button>
     <div class="ct-stamp" id="ctStamp" aria-hidden="true"><span>ANGENOMMEN</span><small>STUDIO68 ✳ HEDDESHEIM</small></div>
-    <div class="ct-done" id="ctDone" hidden>
-      <b>Deal. Wir melden uns.</b>
-      <p id="ctDoneTxt"></p>
-      <div class="ct-done-btns"><a class="btn btn-ink" id="icsBtn" href="#" download="probetraining-studio68.ics">In Kalender eintragen</a><a class="btn btn-line js-wa" id="waConfirm" href="#" target="_blank" rel="noopener">Per WhatsApp bestätigen</a></div>
-    </div>
+    <div class="ct-done" id="ctDone" hidden><b>Deal. Wir melden uns.</b><p id="ctDoneTxt"></p><div class="ct-done-btns"><a class="btn btn-ink" id="icsBtn" href="#" download="probetraining-studio68.ics">In Kalender</a><a class="btn btn-line js-wa" id="waConfirm" href="#" target="_blank" rel="noopener">Per WhatsApp bestätigen</a></div></div>
   </form>
 </section>
 
 <!-- ============ KONTAKT ============ -->
-<section class="contact paper" id="kontakt" data-round="8" data-rname="FINALE">
-  <div class="ctc-grid">
-    <div class="ctc-a">
-      <div class="mono sh-k"><span class="ast">✳</span> ANFAHRT // N 49.50° E 8.60°</div>
-      <h2 class="ctc-h tech">Lessing&shy;straße 6<br><span>68542 Heddesheim</span></h2>
-      <div class="ctc-status" id="ctcStatus"></div>
-      <table class="hours" id="hours"></table>
-      <div class="ctc-btns">
-        <a class="btn btn-ink" id="routeBtn" href="https://www.google.com/maps/dir/?api=1&destination=Lessingstra%C3%9Fe+6+68542+Heddesheim" target="_blank" rel="noopener">Route planen →</a>
-        <a class="soc-chip soc-wa js-wa" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg><span>WhatsApp</span></a>
-        <a class="soc-chip soc-ig js-ig" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
-        <a class="btn btn-line js-tel" href="#">Anrufen</a>
-        <a class="btn btn-line js-mail" href="#">E-Mail</a>
-      </div>
-    </div>
-    <div class="ctc-b">
-      <div class="radar" id="radar" aria-hidden="true">
-        <svg viewBox="0 0 400 400"><g class="rd-grid"><circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="180"/><path d="M200 10V390M10 200H390"/></g>
-          <g class="rd-roads"><path d="M30 250 C 120 230, 180 214, 250 196 S 360 160, 392 150"/><path d="M170 20 C 180 120, 190 160, 200 200 S 220 330, 232 392"/><path d="M60 110 C 140 130, 260 150, 360 300"/></g>
-          <g class="rd-sweep"><path d="M200 200 L200 20 A180 180 0 0 1 327 73 Z"/></g>
-          <g class="rd-pin"><circle cx="200" cy="200" r="7"/><circle class="rd-ping" cx="200" cy="200" r="7"/></g>
-          <text x="214" y="190">STUDIO68</text><text x="214" y="206" class="sm">LESSINGSTR. 6</text>
-          <text x="22" y="30" class="sm">N 49.50°</text><text x="22" y="46" class="sm">E 8.60°</text>
-        </svg>
-        <span class="mono rd-l">RADAR // SCHEMATISCH</span>
-      </div>
-      <figure class="ctc-photo"><img src="assets/img/reception.jpg" alt="Empfang im Studio68" data-photo="contact" loading="lazy"><figcaption class="hand">hier wartet dein Probetraining →</figcaption></figure>
+<section class="contact paper scr" id="kontakt">
+  <div class="ctc-a">
+    <div class="mono sh-k"><span class="ast">✳</span> ANFAHRT</div>
+    <h2 class="ctc-h tech">Lessing&shy;straße 6<span>68542 Heddesheim</span></h2>
+    <div class="ctc-status" id="ctcStatus"></div>
+    <table class="hours" id="hours"></table>
+    <div class="ctc-btns">
+      <a class="soc-chip soc-wa js-wa" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg><span>WhatsApp</span></a>
+      <a class="soc-chip soc-ig js-ig" href="#" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+      <a class="soc-chip soc-tel js-tel" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Anrufen</span></a>
+      <a class="btn btn-ink" id="routeBtn" href="#" target="_blank" rel="noopener">Route →</a>
     </div>
   </div>
-  <div class="faq" id="faq">
-    <h3 class="faq-h">Fragen vor der ersten Runde</h3>
-    <div id="faqList"></div>
+  <div class="ctc-b">
+    <div class="radar" aria-hidden="true">
+      <svg viewBox="0 0 400 400"><g class="rd-grid"><circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="180"/><path d="M200 10V390M10 200H390"/></g>
+        <g class="rd-roads"><path d="M30 250 C 120 230, 180 214, 250 196 S 360 160, 392 150"/><path d="M170 20 C 180 120, 190 160, 200 200 S 220 330, 232 392"/><path d="M60 110 C 140 130, 260 150, 360 300"/></g>
+        <g class="rd-sweep"><path d="M200 200 L200 20 A180 180 0 0 1 327 73 Z"/></g>
+        <g class="rd-pin"><circle cx="200" cy="200" r="7"/><circle class="rd-ping" cx="200" cy="200" r="7"/></g>
+        <text x="214" y="190">STUDIO68</text><text x="214" y="206" class="sm">LESSINGSTR. 6</text></svg>
+    </div>
+    <figure class="ctc-photo"><img src="assets/img/reception.jpg" alt="Empfang im Studio68" data-photo="contact" loading="lazy"><figcaption class="hand">hier wartet dein Probetraining →</figcaption></figure>
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section class="faq-sec paper-2 scr" id="faq">
+  <div class="faq"><div class="mono sh-k"><span class="ast">✳</span> FAQ</div><h2 class="faq-h">Fragen vor der ersten Runde</h2><div id="faqList"></div></div>
+</section>
+
 </main>
+
 
 <noscript><style>.boot{display:none}</style><p style="padding:2rem">Für den Live-Plan und die Buchung bitte JavaScript aktivieren. Telefon: 01525 405 854 6 · info@studio68-heddesheim.de</p></noscript>
 <script type="module" src="assets/js/main.js"></script>

@@ -47,13 +47,77 @@
   "photos": {
     "hero": "assets/img/sparring.jpg",
     "heroSmall": "assets/img/trophies.jpg",
-    "night": "assets/img/gym-functional.jpg",
+    "night": "assets/img/galerie/g09.jpg",
     "contact": "assets/img/reception.jpg"
   },
   "gallery": [
     {
+      "src": "assets/img/galerie/g01.jpg",
+      "caption": "Gürtel. Verdient."
+    },
+    {
+      "src": "assets/img/galerie/g13.jpg",
+      "caption": "Pratzenarbeit"
+    },
+    {
+      "src": "assets/img/galerie/g07.jpg",
+      "caption": "Das Team"
+    },
+    {
+      "src": "assets/img/galerie/g10.jpg",
+      "caption": "Medaillen-Tag"
+    },
+    {
+      "src": "assets/img/galerie/g05.jpg",
+      "caption": "Kurs am Abend"
+    },
+    {
+      "src": "assets/img/galerie/g19.jpg",
+      "caption": "Kids im Sparring"
+    },
+    {
+      "src": "assets/img/galerie/g02.jpg",
+      "caption": "Fight Night"
+    },
+    {
+      "src": "assets/img/galerie/g09.jpg",
+      "caption": "Im Ring"
+    },
+    {
+      "src": "assets/img/galerie/g15.jpg",
+      "caption": "Fight Team"
+    },
+    {
+      "src": "assets/img/galerie/g11.jpg",
+      "caption": "WFMC"
+    },
+    {
+      "src": "assets/img/galerie/g08.jpg",
+      "caption": "Kids-Team"
+    },
+    {
+      "src": "assets/img/galerie/g06.jpg",
+      "caption": "Volle Fläche"
+    },
+    {
+      "src": "assets/img/galerie/g03.jpg",
+      "caption": "Ringwalk"
+    },
+    {
+      "src": "assets/img/galerie/g14.jpg",
+      "caption": "Unsere Leute"
+    },
+    {
+      "src": "assets/img/galerie/g04.jpg",
+      "caption": "Kindertraining"
+    },
+    {
+      "src": "assets/img/galerie/g18.jpg",
+      "caption": "Familie"
+    },
+    {
       "src": "assets/img/reception.jpg",
-      "caption": "Empfang. Orange ist Pflicht."
+      "caption": "Empfang"
     },
     {
       "src": "assets/img/gym-functional.jpg",
@@ -61,27 +125,27 @@
     },
     {
       "src": "assets/img/trophies.jpg",
-      "caption": "Die Gürtel-Vitrine"
-    },
-    {
-      "src": "assets/img/gym-tire.jpg",
-      "caption": "Tire, Box, Air Bike"
-    },
-    {
-      "src": "assets/img/kids-group.jpg",
-      "caption": "Kids-Team"
-    },
-    {
-      "src": "assets/img/gym-cardio.jpg",
-      "caption": "Muskelfabrik"
-    },
-    {
-      "src": "assets/img/sparring.jpg",
-      "caption": "Respekt vor dem Sparring"
+      "caption": "Die Vitrine"
     },
     {
       "src": "assets/img/gym-machines-wide.jpg",
-      "caption": "Kraftgeräte"
+      "caption": "Muskelfabrik"
+    },
+    {
+      "src": "assets/img/galerie/g16.jpg",
+      "caption": "Hausgala"
+    },
+    {
+      "src": "assets/img/galerie/g17.jpg",
+      "caption": "Ringside"
+    },
+    {
+      "src": "assets/img/galerie/g22.jpg",
+      "caption": "Im Käfig"
+    },
+    {
+      "src": "assets/img/galerie/g12.jpg",
+      "caption": "Siegerfoto"
     }
   ],
   "video": "",
@@ -549,7 +613,66 @@
     "text": "K1, Boxen und Muay Thai im eigenen Studio. Der nächste Termin kommt hier und auf Instagram.",
     "video": ""
   },
-  "coaches": [],
+  "coaches": [
+    {
+      "name": "Oliver Zink",
+      "role": "Cheftrainer · Kickboxen & Muay Thai",
+      "photo": "assets/img/team/oliver-zink.jpg",
+      "text": "Kick- und Thaibox-Trainer mit eigener Wettkampfkarriere. Will Selbstvertrauen und Respekt an seine Schüler weitergeben.",
+      "stats": [
+        {
+          "k": "Titel",
+          "v": "WFMC-Weltmeister Kickboxen & K1 (2019)"
+        },
+        {
+          "k": "Titel",
+          "v": "WFMC-Europameister (2020)"
+        }
+      ]
+    },
+    {
+      "name": "Karolin Löffler",
+      "role": "Fitness- & Ernährungscoach",
+      "photo": "assets/img/team/karolin-loeffler.jpg",
+      "text": "",
+      "stats": []
+    },
+    {
+      "name": "Phil Arnold",
+      "role": "MMA- & K1-Trainer",
+      "photo": "assets/img/team/phil-arnold.jpg",
+      "text": "",
+      "stats": []
+    },
+    {
+      "name": "Daniel Vranjkovic",
+      "role": "Muay Thai & K1",
+      "photo": "assets/img/team/daniel-vranjkovic.jpg",
+      "text": "",
+      "stats": []
+    },
+    {
+      "name": "Patrick Funk",
+      "role": "Muay Thai",
+      "photo": "assets/img/team/patrick-funk.jpg",
+      "text": "",
+      "stats": []
+    },
+    {
+      "name": "Alessio",
+      "role": "K1-Trainer & Wettkämpfer",
+      "photo": "assets/img/team/alessio.jpg",
+      "text": "",
+      "stats": []
+    },
+    {
+      "name": "Mia Zink",
+      "role": "Kindertrainerin & Organisationstalent",
+      "photo": "assets/img/team/mia-zink.jpg",
+      "text": "",
+      "stats": []
+    }
+  ],
   "reviews": [
     {
       "name": "Carl Roland Hülse",
@@ -575,6 +698,18 @@
       "name": "Marko Vunic",
       "text": "Ich bin zwar schon eine Weile kein Mitglied mehr, aber das Studio und die Leute dort sind super. Kann ich nur empfehlen!",
       "mark": "Kann ich nur empfehlen"
+    },
+    {
+      "name": "Michael Mrdn",
+      "text": "Einfach nur top!!! Angefangen von den Trainern bis zur Trainingsstätte. Alles super!",
+      "mark": "Einfach nur top!!!",
+      "src": "Facebook"
+    },
+    {
+      "name": "Manu Kärcher",
+      "text": "Super Trainer und Trainingseinheiten und sehr freundliche Atmosphäre.",
+      "mark": "sehr freundliche Atmosphäre",
+      "src": "Facebook"
     }
   ],
   "reviewCount": 91,
@@ -662,6 +797,85 @@
         "t": "Gürtel-Vitrine",
         "d": "Titel aus Kickboxen und Muay Thai. Platz für deinen ist noch da."
       }
+    ],
+    "missionHead": "Wir sind auf einer Mission: dir zu helfen, dein Leben zu verändern.",
+    "missionSub": "Egal, ob du Athlet bist und einen Vorteil suchst oder deine Gesundheit verbessern willst: Wir haben alles für dich.",
+    "triple": [
+      "Persönliche Aufmerksamkeit.",
+      "Messbare Ziele.",
+      "Eine engagierte Community."
+    ],
+    "teamIntro": "Wir haben das Rad nicht neu erfunden. Aber in welchem Studio bekommt man Kampfsport, Kurse und Fitness unter einem Dach? Stress und Anspannung werden hier kanalisiert und in Kraft umgewandelt.",
+    "teamStats": [
+      {
+        "v": "60+",
+        "k": "Jahre Erfahrung zusammen"
+      },
+      {
+        "v": "7",
+        "k": "Coaches"
+      },
+      {
+        "v": "WM",
+        "k": "Titel im Team"
+      }
+    ],
+    "galleryIntro": "Unsere ganze Mission: dir zu helfen, dein größtes Kapital zu stärken. Deine Gesundheit.",
+    "maybe": [
+      "Vielleicht bist du nicht in Form und brauchst nur etwas Hilfe.",
+      "Vielleicht brauchst du mehr Energie.",
+      "Vielleicht brauchst du mehr Motivation.",
+      "Vielleicht willst du stärker werden.",
+      "Vielleicht brauchst du nur ein wenig Coaching für deine Technik."
+    ],
+    "studio": [
+      {
+        "t": "Kampfsportfläche",
+        "d": "Matten, Sandsäcke, Ring-Ecke: hier laufen MMA, Muay Thai, Boxen, Krav Maga und die Kids-Kurse.",
+        "img": "assets/img/galerie/g05.jpg"
+      },
+      {
+        "t": "Muskelfabrik",
+        "d": "Kraft- und Cardiogeräte für ehrliches Krafttraining. Ohne Dresscode, ohne schräge Blicke.",
+        "img": "assets/img/gym-machines-1.jpg"
+      },
+      {
+        "t": "Functional Area",
+        "d": "Tire, Battle Ropes, Box und Air Bike für Kondition, die im Kampf zählt.",
+        "img": "assets/img/gym-tire.jpg"
+      },
+      {
+        "t": "Empfang & Lounge",
+        "d": "Orange Theke, Gürtel-Vitrine, Sofa. Hier wird nach dem Training gequatscht.",
+        "img": "assets/img/reception.jpg"
+      }
+    ],
+    "wins": [
+      {
+        "y": "2020",
+        "t": "WFMC-Europameister in Birmingham",
+        "who": "Oliver Zink"
+      },
+      {
+        "y": "2019",
+        "t": "WFMC-Weltmeister im Kickboxen und K1",
+        "who": "Oliver Zink"
+      },
+      {
+        "y": "2019",
+        "t": "Vizeweltmeister Muay Thai (WMF, Junioren) und Deutscher Meister",
+        "who": "Marius Groß"
+      },
+      {
+        "y": "2018",
+        "t": "Veteranen-Weltmeister im Kickboxen",
+        "who": "Oliver Zink"
+      },
+      {
+        "y": "2015",
+        "t": "WFMC-Gold im Kickboxen Ü35, K.o. in Runde eins",
+        "who": "Oliver Zink"
+      }
     ]
   },
   "kidsFaq": [
@@ -681,5 +895,375 @@
       "q": "Was kostet das Kindertraining?",
       "a": "Je nach Laufzeit zwischen 55 und 70 € im Monat, Dienstag und Donnerstag inklusive. Das erste Probetraining ist kostenlos."
     }
-  ]
+  ],
+  "news": [
+    {
+      "id": "frohe-weihnachten-guten-rutsch",
+      "date": "2025-12-22",
+      "title": "Frohe Weihnachten & Guten Rutsch",
+      "cat": "news",
+      "img": "assets/img/news/weihnachten.jpg",
+      "text": [
+        "Liebe Mitglieder, Freunde & Trainingspartner,",
+        "wir möchten uns von Herzen für eure Energie, euren Einsatz und euren Teamgeist bedanken. Ihr habt 2025 im Studio68 Heddesheim wieder zu einem Jahr gemacht, in dem man nicht nur härter trainiert – sondern auch gemeinsam wächst.",
+        "Ob K1/Muay Thai, Boxen, MMA, Krav Maga oder unsere Kids-Kurse: Danke, dass ihr mit uns auf der Matte steht – Woche für Woche.",
+        "Wir wünschen euch und euren Familien frohe Weihnachten, erholsame Feiertage und einen guten Rutsch ins neue Jahr – vor allem mit Gesundheit, Fokus und neuer Kraft für eure Ziele.",
+        "Wir freuen uns darauf, euch auch 2026 bei Studio68 Heddesheim zu sehen: im Training, im Sparring, beim Technik-Feinschliff – und als Teil einer Community, die für Respekt, Disziplin und Zusammenhalt steht.",
+        "Frohe Weihnachten und bis bald im Studio! 🎄🥊",
+        "Euer Team vom Studio68 Heddesheim"
+      ],
+      "link": ""
+    },
+    {
+      "id": "sparrings-treffen-im-studio68-heddesheim",
+      "date": "2025-04-29",
+      "title": "Sparrings-Treffen im Studio68 Heddesheim",
+      "cat": "news",
+      "img": "assets/img/sparring.jpg",
+      "text": [
+        "Sparrings-Treffen im Studio68 Heddesheim – Gemeinsam trainieren, austauschen und wachsen",
+        "Am 4. Mai von 11:00 bis 13:00 Uhr lädt Studio68 Heddesheim alle Kampfsportbegeisterten herzlich zum großen Sparrings-Treffen ein! Ob befreundete Gyms, langjährige Mitglieder oder neue Gesichter – jede*r ist willkommen. In freundschaftlicher Atmosphäre wird gemeinsam trainiert, getestet und gelernt – ganz ohne Leistungsdruck, aber mit viel Leidenschaft und Respekt.",
+        "Jetzt anmelden zum Sparrings-Treffen bei Studio68 in Heddesheim! Offenes Kampfsport-Event für alle Freunde, Gyms und Levels – am 4. Mai von 11–13 Uhr. Fair trainieren & Spaß haben!",
+        "Warum du beim Sparrings-Treffen dabei sein solltest:",
+        "Gemeinsam stark: Vernetze dich mit Gleichgesinnten aus der Region, lerne neue Techniken kennen und erhalte wertvolles Feedback in einer offenen, motivierenden Atmosphäre.",
+        "Realistische Anwendung: Sparring ist ein wichtiger Teil des Kampfsporttrainings – hier kannst du Techniken unter realistischen Bedingungen ausprobieren und verfeinern.",
+        "Respektvolles Miteinander: Fairness und Sicherheit stehen im Vordergrund – es geht nicht ums Gewinnen, sondern ums gemeinsame Wachsen.",
+        "Für alle Levels geeignet: Egal ob Anfänger oder Fortgeschrittene – du wirst Sparringspartner*innen auf deinem Niveau finden.",
+        "Veranstaltungsdetails:",
+        "📅 Datum: Samstag, 4. Mai🕚 Uhrzeit: 11:00 – 13:00 Uhr📍 Ort: Studio68, Heddesheim🎯 Ziel: Freundschaftliches Sparring, Vernetzung & Spaß am Training",
+        "Für wen ist das Event gedacht?",
+        "Für alle Kampfsportler*innen aus Kickboxen, Muay Thai, Krav Maga und anderen striking-basierten Systemen, die Lust auf einen freundschaftlichen Austausch haben – unabhängig von Gym-Zugehörigkeit oder Erfahrung."
+      ],
+      "link": ""
+    },
+    {
+      "id": "jahresend-angebot-der-extraklasse",
+      "date": "2024-12-17",
+      "title": "Jahresend-Angebot der Extraklasse!",
+      "cat": "news",
+      "img": "assets/img/news/jahresend.jpg",
+      "text": [
+        "Jahresend-Angebot der Extraklasse! 🎉",
+        "Nutze die Gelegenheit, das Jahr mit einem fantastischen Angebot abzuschließen, das du nicht verpassen solltest! Schließe bis zum 30.11.2024 eine 1-Jahres-Mitgliedschaft in einem unserer Clubs ab und erhalte das restliche Jahr kostenloses Training! 💪",
+        "Das Beste daran: Die ersten 20 Mitglieder, die dieses Angebot annehmen, sparen sich zusätzlich die Startgebühr! 🏃‍♂️",
+        "Worauf wartest du noch? Mache dich bereit für einen schweißtreibenden Start ins neue Jahr! Je früher du dich anmeldest, desto länger profiteierst du von kostenlosem Training!",
+        "Dein Studio 68"
+      ],
+      "link": ""
+    },
+    {
+      "id": "vom-anfaenger-zum-profi",
+      "date": "2024-09-17",
+      "title": "Vom Anfänger zum Profi",
+      "cat": "news",
+      "img": "",
+      "text": [
+        "Vom Anfänger zum Profi: Wie Studio68 Fitnesspläne für jeden individuell anpasst",
+        "In der heutigen Welt, in der Fitness eine entscheidende Rolle für unsere Gesundheit und unser Wohlbefinden spielt, ist es wichtig, ein Trainingsprogramm zu finden, das perfekt auf die eigenen Bedürfnisse abgestimmt ist. Bei Studio68 in Heddesheim stehen individuelle Fitnesspläne im Mittelpunkt, die genau das bieten. Egal, ob du gerade erst mit deiner Fitnessreise beginnst oder bereits ein erfahrener Sportler bist, bei Studio68 findest du die passende Unterstützung.",
+        "Individuelle Fitnesspläne bei Studio68",
+        "Studio68 bietet maßgeschneiderte Trainingspläne, die auf deine persönlichen Ziele und Bedürfnisse abgestimmt sind. Unsere erfahrenen Trainer, darunter auch Welt- und Europameister, arbeiten eng mit dir zusammen, um einen Plan zu erstellen, der nicht nur effektiv, sondern auch motivierend ist. Diese individuelle Herangehensweise ermöglicht es dir, schneller Fortschritte zu erzielen und deine Fitnessziele zu erreichen.",
+        "Die Vorteile des persönlichen Trainings",
+        "Gezielte Unterstützung: Mit einem personalisierten Fitnessplan kannst du gezielt an deinen Schwächen arbeiten und deine Stärken weiter ausbauen. Unsere Trainer analysieren deine aktuellen Fähigkeiten und erstellen darauf basierend ein maßgeschneidertes Programm.",
+        "Motivation und Verantwortung: Regelmäßige Treffen mit deinem Trainer helfen dir, motiviert zu bleiben und Verantwortung für dein Training zu übernehmen. Du wirst feststellen, dass du mit einem klaren Plan und professioneller Unterstützung viel effektiver trainieren kannst.",
+        "Flexibilität: Ein individueller Trainingsplan kann an deinen Alltag angepasst werden, sodass du trotz eines vollen Terminkalenders regelmäßig trainieren kannst.",
+        "Training in der hochmodernen ‚Muskelfabrik‘",
+        "Ein weiteres Highlight bei Studio68 ist die ‚Muskelfabrik‘, unsere hochmoderne Fitnessanlage. Ausgestattet mit den neuesten Geräten bietet sie die ideale Umgebung für ein effektives Personal Training. Hier kannst du unter optimalen Bedingungen trainieren und von der Unterstützung durch unser qualifiziertes Team profitieren.",
+        "Praktische Tipps für dein individuelles Training",
+        "Setze klare Ziele: Überlege dir, was du mit deinem Training erreichen möchtest. Sei es Gewichtsverlust, Muskelaufbau oder einfach nur ein gesünderer Lebensstil – klare Ziele helfen dir, fokussiert zu bleiben.",
+        "Sei geduldig: Fortschritte brauchen Zeit. Bleibe geduldig und halte dich an deinen Plan, um nachhaltige Ergebnisse zu erzielen.",
+        "Höre auf deinen Körper: Passe dein Training an, wenn dein Körper es verlangt. Überanstrengung kann zu Verletzungen führen, daher ist es wichtig, auf die Signale deines Körpers zu achten.",
+        "Einladung zur Community",
+        "Wir bei Studio68 legen großen Wert auf eine starke Community. Teile deine Erfahrungen mit uns und anderen Mitgliedern, stelle Fragen und lasse dich inspirieren. Wir freuen uns darauf, von dir zu hören!",
+        "Entdecke die personalisierten Trainingsangebote bei Studio68",
+        "Bist du bereit, dein Fitnesslevel auf das nächste Level zu heben? Dann besuche uns bei Studio68 in Heddesheim und entdecke unsere personalisierten Trainingsangebote. Unsere Experten stehen bereit, um dich auf deinem Weg zu unterstützen. Melde dich noch heute für eine kostenlose Beratung an und starte deine individuelle Fitnessreise!",
+        "Ruf uns an oder besuche uns auf unserer Website, um mehr zu erfahren und deinen persönlichen Fitnessplan zu erstellen."
+      ],
+      "link": ""
+    },
+    {
+      "id": "great-re-opening",
+      "date": "2024-09-13",
+      "title": "Great Re-Opening",
+      "cat": "news",
+      "img": "assets/img/news/reopening.jpg",
+      "text": [
+        "Feierliche Wiedereröffnung von Studio68: Ein Fest für Fitness, Boxen und Muay Thai",
+        "Am 15. September 2024 ist es endlich soweit: Studio68, das renommierte Fitnessstudio für Fitness, Boxen und Muay Thai, lädt zur großen Jubiläums-Wiedereröffnung ein! Ab 13:00 Uhr öffnen wir unsere Türen in der Lessingstraße 6, 68542 Heddesheim, und möchten diesen besonderen Tag mit Ihnen feiern.",
+        "Ein Tag voller Highlights",
+        "Freuen Sie sich auf ein abwechslungsreiches Programm, das sowohl eingefleischte Sportbegeisterte als auch Neulinge in der Fitnesswelt begeistern wird. Unsere erfahrenen Trainer stehen bereit, um Ihnen eine Einführung in die verschiedenen Disziplinen zu geben. Egal, ob Sie Ihr Boxen auf das nächste Level bringen oder sich erstmalig in die Welt des Muay Thai wagen möchten – bei uns sind Sie genau richtig!",
+        "Exklusive Eröffnungsangebote",
+        "Zur Feier des Tages haben wir uns etwas ganz Besonderes einfallen lassen: Erleben Sie unsere speziellen Promotions, die nur am Eröffnungstag gültig sind. Sichern Sie sich attraktive Rabatte auf Mitgliedschaften und exklusive Angebote für Personal Training Sessions. Lassen Sie sich diese Gelegenheit nicht entgehen, zu außergewöhnlichen Konditionen Teil der Studio68-Familie zu werden.",
+        "Warum Studio68?",
+        "Studio68 steht für eine freundliche Atmosphäre, in der Gemeinschaft und persönlicher Fortschritt großgeschrieben werden. Unser Team von qualifizierten Trainern begleitet Sie auf Ihrem individuellen Fitnessweg und hilft Ihnen, Ihre sportlichen Ziele zu erreichen. Wir bieten modernste Ausstattung und ein breites Spektrum an Kursen, die auf Ihre Bedürfnisse zugeschnitten sind.",
+        "Kontaktieren Sie uns",
+        "Haben Sie Fragen oder möchten Sie mehr über das Event erfahren? Zögern Sie nicht, uns unter der Telefonnummer 06203 – 8406508 anzurufen oder eine E-Mail an info@studio68-heddesheim.de zu senden. Wir freuen uns darauf, Sie am 15. September bei uns begrüßen zu dürfen!",
+        "Besuchen Sie unsere Webseite unter studio68-heddesheim.de für weitere Informationen und Updates rund um die Wiedereröffnung. Wir freuen uns darauf, mit Ihnen gemeinsam in eine neue Ära von Studio68 zu starten!"
+      ],
+      "link": ""
+    },
+    {
+      "id": "einfuehrung-in-muay-thai-im-studio68",
+      "date": "2024-07-08",
+      "title": "Einführung in Muay Thai im Studio68",
+      "cat": "news",
+      "img": "",
+      "text": [
+        "Die Kunst der acht Gliedmaßen: Einführung in Muay Thai im Studio68",
+        "Willkommen zu einem tiefgehenden Einblick in die faszinierende Welt des Muay Thai, auch bekannt als „Die Kunst der acht Gliedmaßen“. In diesem Blog-Post möchten wir dir einen umfassenden Überblick über eine der ältesten und effektivsten Kampfsportarten der Welt geben. Erfahre mehr über die Geschichte, Techniken, gesundheitlichen Vorteile und wie du im Studio68 in Heddesheim damit beginnen kannst.",
+        "Die Ursprünge des Muay Thai",
+        "Muay Thai hat seine Wurzeln in Thailand und ist dort seit Jahrhunderten ein fester Bestandteil der Kultur und Tradition. Der Ursprung dieser Kampfkunst reicht bis ins 16. Jahrhundert zurück und wurde ursprünglich als militärische Kampftechnik entwickelt. Im Laufe der Zeit entwickelte sich Muay Thai zu einem populären Nationalsport, der heute weltweit Anerkennung findet.",
+        "Im Unterschied zu anderen Kampfsportarten zeichnet sich Muay Thai durch den Einsatz von „acht Gliedmaßen“ aus: Fäuste, Ellenbogen, Knie und Schienbeine. Diese einzigartige Technik macht Muay Thai besonders vielseitig und effektiv im Kampf.",
+        "Die Grundlagen des Muay Thai",
+        "Muay Thai ist bekannt für seine beeindruckenden Techniken und Kombinationen. Hier sind einige der grundlegenden Elemente, die du beim Training im Studio68 lernen wirst:",
+        "Schläge (Punches):\n\nJab",
+        "Cross",
+        "Hook",
+        "Uppercut",
+        "Tritte (Kicks):\n\nLow Kick",
+        "High Kick",
+        "Teep (Front Kick)",
+        "Roundhouse Kick",
+        "Ellenbogenschläge (Elbow Strikes):\n\nHorizontaler Ellbogenschlag",
+        "Aufwärtsschlag mit dem Ellbogen",
+        "Horizontal rückwärts",
+        "Knietechniken (Knee Strikes):\n\nGerader Knieschlag",
+        "Springender Knieschlag",
+        "Seitlicher Knieschlag",
+        "Clinching:\n\nDas Clinching ist eine Nahkampftechnik, bei der beide Kämpfer versuchen, die Kontrolle zu übernehmen und den Gegner in eine vorteilhafte Position zu bringen. Dies ist besonders nützlich, um Knie- und Ellbogenschläge effektiv anzuwenden.",
+        "Die gesundheitlichen Vorteile von Muay Thai",
+        "Muay Thai bietet zahlreiche gesundheitliche Vorteile, die weit über die bloße Verbesserung der physischen Fitness hinausgehen. Hier sind einige Gründe, warum du Muay Thai in dein Trainingsprogramm integrieren solltest:",
+        "Ganzkörpertraining:\n\nMuay Thai ist ein intensives Ganzkörpertraining, das praktisch jede Muskelgruppe beansprucht. Durch die Kombination von Schlägen, Tritten und Clinching wird nicht nur die Kraft, sondern auch die Ausdauer, Beweglichkeit und Koordination verbessert.",
+        "Kardiovaskuläre Fitness:\n\nMuay Thai-Training ist ein hervorragendes kardiovaskuläres Workout. Es erhöht die Herzfrequenz und fördert die Durchblutung, was zur Verbesserung der Herzgesundheit beiträgt.",
+        "Gewichtsverlust und Körperstraffung:\n\nAufgrund seiner Intensität hilft Muay Thai, Kalorien zu verbrennen und überschüssiges Fett zu reduzieren. Gleichzeitig werden die Muskeln gestrafft und der Körper geformt.",
+        "Stressabbau:\n\nDas Training in Muay Thai bietet eine großartige Möglichkeit, Stress abzubauen. Die körperliche Anstrengung und die Konzentration auf Techniken helfen, den Geist zu klären und Spannungen zu lösen.",
+        "Selbstverteidigung:\n\nDie erlernten Techniken im Muay Thai sind nicht nur für den Sport nützlich, sondern können auch in Selbstverteidigungssituationen angewendet werden. Das Wissen, sich verteidigen zu können, stärkt das Selbstvertrauen und das Sicherheitsgefühl.",
+        "Mentale Stärke:\n\nMuay Thai fördert Disziplin, Geduld und Durchhaltevermögen. Es hilft dabei, mentale Barrieren zu überwinden und die eigene Komfortzone zu erweitern.",
+        "Muay Thai im Studio68",
+        "Das Studio68 in Heddesheim bietet professionelle Muay Thai-Kurse für Anfänger und Fortgeschrittene an. Unsere erfahrenen Trainer sind darauf spezialisiert, dich Schritt für Schritt in die Techniken und Strategien des Muay Thai einzuführen. Hier sind einige Highlights unseres Trainingsprogramms:",
+        "Einführungskurse für Anfänger:\n\nUnsere Einführungskurse sind ideal für Neulinge, die keine oder nur wenig Erfahrung im Muay Thai haben. Du lernst die grundlegenden Techniken und Bewegungsmuster in einem sicheren und unterstützenden Umfeld.",
+        "Fortgeschrittenenkurse:\n\nFür erfahrenere Kämpfer bieten wir fortgeschrittene Kurse an, die sich auf komplexere Techniken, Kombinationen und Sparring konzentrieren. Wir helfen dir, deine Fähigkeiten zu verfeinern und dich auf Wettkämpfe vorzubereiten, wenn du dies wünschst.",
+        "Personal Training:\n\nWenn du ein individuell angepasstes Training bevorzugst, steht dir unser Personal Training zur Verfügung. Unsere Trainer erstellen einen maßgeschneiderten Trainingsplan, der auf deine spezifischen Ziele und Bedürfnisse abgestimmt ist.",
+        "Fitnesskurse:\n\nNeben den klassischen Muay Thai-Kursen bieten wir auch spezielle Fitnesskurse an, die die Techniken des Muay Thai in ein intensives Workout integrieren. Diese Kurse sind perfekt, um deine allgemeine Fitness zu verbessern und gleichzeitig die Grundlagen des Muay Thai zu erlernen.",
+        "Kinder- und Jugendkurse:\n\nMuay Thai ist nicht nur für Erwachsene! Wir bieten auch Kurse für Kinder und Jugendliche an, in denen sie auf spielerische Weise die Grundlagen des Muay Thai erlernen können. Dies fördert Disziplin, Respekt und Selbstvertrauen bei jungen Teilnehmern.",
+        "Erfolgsgeschichten unserer Mitglieder",
+        "Unsere Mitglieder haben beeindruckende Fortschritte erzielt und erstaunliche Transformationen durchlaufen. Hier sind einige inspirierende Erfolgsgeschichten:",
+        "Maximilian, 35 Jahre: „Als ich mit Muay Thai im Studio68 anfing, hatte ich Übergewicht und fühlte mich ständig gestresst. Durch das regelmäßige Training habe ich nicht nur 10 kg abgenommen, sondern fühle mich auch mental viel stärker. Ich kann es jedem nur empfehlen!“",
+        "Lisa, 28 Jahre: „Ich war auf der Suche nach einem Workout, das mich wirklich herausfordert. Muay Thai hat meine Erwartungen übertroffen. Die Trainer im Studio68 sind unglaublich unterstützend und motivierend. Meine Fitness hat sich enorm verbessert, und ich fühle mich selbstsicherer denn je.“",
+        "Jonas, 22 Jahre: „Als Student suchte ich nach einem Weg, um Stress abzubauen und fit zu bleiben. Muay Thai im Studio68 war die perfekte Lösung. Das Training hat mir geholfen, einen klaren Kopf zu bekommen und meine akademischen Leistungen zu steigern.“",
+        "Wie du starten kannst",
+        "Wenn du neugierig geworden bist und Muay Thai im Studio68 ausprobieren möchtest, sind hier einige Schritte, wie du anfangen kannst:",
+        "Kostenloses Probetraining:\n\nMelde dich für ein kostenloses Probetraining an, um einen ersten Eindruck von unseren Kursen und dem Studio zu bekommen. Du kannst unsere Trainer kennenlernen und einen Einblick in das Training gewinnen.",
+        "Beratungsgespräch:\n\nVereinbare ein persönliches Beratungsgespräch mit einem unserer Trainer. Wir besprechen deine Ziele, beantworten deine Fragen und erstellen einen individuellen Trainingsplan.",
+        "Mitgliedschaft:\n\nWähle die Mitgliedschaft, die am besten zu deinen Bedürfnissen passt. Wir bieten flexible Mitgliedschaftsoptionen an, die sich an dein Leben und deine Trainingsziele anpassen.",
+        "Ausrüstung:\n\nFür den Anfang benötigst du nur bequeme Sportkleidung und etwas Motivation. Im Laufe der Zeit kannst du dir eigene Handschuhe, Schienbeinschoner und andere Ausrüstungsgegenstände zulegen.",
+        "Regelmäßiges Training:\n\nDer Schlüssel zum Erfolg im Muay Thai ist die Regelmäßigkeit. Plane dein Training fest in deinen Wochenablauf ein und halte dich daran. Die Fortschritte werden nicht lange auf sich warten lassen.",
+        "Fazit",
+        "Muay Thai ist weit mehr als nur eine Sportart – es ist eine Lebensweise, die Körper und Geist gleichermaßen fordert und stärkt. Im Studio68 in Heddesheim bieten wir dir die Möglichkeit, diese faszinierende Kampfkunst unter professioneller Anleitung zu erlernen und deine Fitnessziele zu erreichen. Egal ob du Anfänger bist oder bereits Erfahrung hast, unsere Kurse sind so gestaltet, dass jeder davon profitieren kann.",
+        "Beginne noch heute deine Reise und entdecke die Kunst der acht Gliedmaßen im Studio68. Wir freuen uns darauf, dich auf deinem Weg zu unterstützen und gemeinsam mit dir an deinen Zielen zu arbeiten."
+      ],
+      "link": ""
+    },
+    {
+      "id": "warum-muay-thai-so-beliebt-ist",
+      "date": "2022-09-26",
+      "title": "Warum Muay Thai so beliebt ist",
+      "cat": "news",
+      "img": "assets/img/news/muay-thai-beliebt.jpg",
+      "text": [
+        "Warum Muay Thai so beliebt ist",
+        "Muay Thai ist eine Sportart, die ursprünglich aus Thailand stammt. Sie wird auch als die „Kunst der acht Gliedmaßen“ bezeichnet, weil sie mit Schlägen, Tritten, Ellbogen und Knien ausgeübt wird. Muay Thai hat in den letzten Jahren stark an Popularität gewonnen, vor allem bei Menschen, die sich für Kampfsport und Selbstverteidigung interessieren. Aber warum ist Muay Thai so beliebt? Werfen wir einen Blick auf einige der Gründe.",
+        "Muay Thai ist eine effektive Form der Selbstverteidigung. Einer der Hauptgründe, warum Muay Thai so beliebt ist, liegt darin, dass es eine wirksame Form der Selbstverteidigung ist. Mit Muay Thai können Sie lernen, wie Sie sich mit Fäusten, Ellbogen, Knien und Füßen gegen einen Angreifer verteidigen können. Muay Thai ist auch ein gutes Training. Ein weiterer Grund, warum Muay Thai so beliebt ist, liegt darin, dass es ein gutes Training ist",
+        "Muay Thai beinhaltet viel Ausdauertraining und Ganzkörperbewegungen, was bedeutet, dass es Ihnen helfen kann, viele Kalorien zu verbrennen und schnell in Form zu kommen. Außerdem können Sie mit Muay Thai auch Muskeln aufbauen und Ihre Ausdauer verbessern. Wenn Sie auf der Suche nach einem Training sind, das sowohl Spaß macht als auch effektiv ist, dann könnte Muay Thai das Richtige für Sie sein",
+        "Muay Thai kann sowohl für Wettkämpfe als auch für die Freizeitgestaltung genutzt werden. Ein weiterer Grund, warum Muay Thai so beliebt ist, liegt darin, dass es sowohl für Wettkämpfe als auch für die Freizeitgestaltung genutzt werden kann. Wenn Sie daran interessiert sind, an Muay-Thai-Turnieren teilzunehmen, gibt es eine Vielzahl von Wettbewerben, an denen Sie teilnehmen können",
+        "Aber auch wenn Sie nur zum Spaß trainieren wollen, können Sie das tun. Es gibt viele Fitnessstudios und Vereine, die Muay Thai-Kurse für Menschen aller Niveaus anbieten. Ganz gleich, welche Ziele Sie verfolgen, Sie können einen Weg finden, Muay Thai zu genießen",
+        "Muay Thai ist eine Sportart, die in den letzten Jahren aufgrund ihrer Effektivität als Selbstverteidigung, ihres Status als großartiges Training und ihrer Vielseitigkeit als Wettkampf- oder Freizeitsport an Popularität gewonnen hat. Wenn Sie mehr über diesen unglaublichen Sport erfahren möchten, besuchen Sie unseren Blog, um weitere Informationen zu erhalten!"
+      ],
+      "link": ""
+    },
+    {
+      "id": "em-erfolg-fuer-kickboxer-oliver-zink",
+      "date": "2020-02-28",
+      "title": "EM-Erfolg für Kickboxer Oliver Zink",
+      "cat": "beides",
+      "img": "assets/img/news/em-erfolg.jpg",
+      "text": [
+        "EM-Erfolg für Kickboxer Oliver Zink",
+        "HEDDESHEIM ZINK UND SEINE KAMPFSPORT-SCHÜLER BEI EM VORN",
+        "Der Heddesheimer Kick- und Thaibox-Trainer Oliver Zink (46) hat erneut einen Titel geholt:",
+        "Bei der Europameisterschaft des Kampfsportverbands World Fight Sport and Martial Arts Council (WFMC) in Birmingham wurde er kürzlich Sieger in seiner Alters- und Gewichtsklasse.",
+        "Erst im vergangenen Jahr hatte sich Zink sowohl im Kickboxen als auch im sogenannten K1 Weltmeister-Titel gesichert."
+      ],
+      "link": "https://www.morgenweb.de/mannheimer-morgen_artikel,-heddesheim-em-erfolg-fuer-kickboxer-oliver-zink-_arid,1604776.html"
+    },
+    {
+      "id": "aus-dem-rollstuhl-in-den-ring",
+      "date": "2019-11-07",
+      "title": "Aus dem Rollstuhl in den Ring",
+      "cat": "presse",
+      "img": "assets/img/news/presse-rollstuhl.jpg",
+      "text": [
+        "HEDDESHEIM OLIVER ZINK ERKÄMPFT SICH TROTZ BANDSCHEIBENVORFALLS ERNEUT EINEN WELTMEISTER-TITEL IM KICKBOXEN",
+        "Aus dem Rollstuhl in den Ring",
+        "Die Geschichte böte Stoff für einen Film. Vom tiefen Fall zum Happy End, großes Kino. Mit einer Rückblende als Einstieg. 2018: Oliver Zink ist 44 Jahre, und sportlich läuft es für ihn. Der Kick- und Thaibox-Trainer mit eigenem Studio in Heddesheim hat gerade erst beschlossen, wieder selbst in den Ring zu steigen."
+      ],
+      "link": "https://www.morgenweb.de/mannheimer-morgen_artikel,-heddesheim-aus-dem-rollstuhl-in-den-ring-_arid,1548867.html"
+    },
+    {
+      "id": "wfmc-weltmeister-k1-75-kg",
+      "date": "2019-10-25",
+      "title": "WFMC Weltmeister K1 – 75 kg",
+      "cat": "beides",
+      "img": "assets/img/news/wfmc-weltmeister.jpg",
+      "text": [
+        "Das erfolgreichste Jahr seit Bestehen des Studio68 in Heddesheim neigt sich dem Ende.",
+        "Marius Groß aus Heddesheim erkämpfte bereits im März bei der Amateurweltmeisterschaft des Weltverbands WMF (World Muay Thai Federation) in Thailand für Deutschland im Nationalteam auf Anhieb Silber und wurde Vizeweltmeister im Muay Thai in der Juniorenklasse bis 68 kg. Direkt aus Thailand zurück verteidigte Marius Groß im April seinen Titel als deutscher Meister in Heilbronn auf der DM und qualifizierte sich direkt wieder für die WM 2016 in Thailand, war somit auch wieder deutscher Meister der Junioren 2015. Leider verletzte sich Groß bei einem Profikampf in Hamburg gegen einen Holländer, sodass er die EM in Griechenland im November absagen musste."
+      ],
+      "link": ""
+    },
+    {
+      "id": "trailer-der-iska-germany",
+      "date": "2019-10-25",
+      "title": "Trailer der ISKA Germany",
+      "cat": "beides",
+      "img": "assets/img/news/iska-trailer.jpg",
+      "text": [
+        "Follow ISKA Germany",
+        "Mit unserem WM Trailer bedanken uns bei unseren Bundestrainern Marc Schmid, Ramazan Varisli, Jürgen Leidel und Andreas Scherf, sowie Murat Idikurt der als Kampfrichter aus Deutschland die ganze WM über im Einsatz war. Selbstverständlich auch allen mitgereisten Heimtrainern und Teambetreuern für ihren unermüdlichen Einsatz während dieser Weltmeisterschaft in Irland.",
+        "Das große Team mit über 80 Starts lies kaum eine Verschnaufpause zu.",
+        "Vielen Dank Herr Dr. Schabbel, er hat unsere Kämpfer als Teamarzt bestens betreut und so sicher auch zum ein oder anderen Sieg beigetragen.",
+        "Natürlich gilt unser Dank allen mitgereisten Eltern, Freunden und Fans. Ein Team Germany ohne eure lautstarke Unterstützung ist kaum vorstellbar.",
+        "Und zu guter letzt: unsere Kämpfer.",
+        "von den kleinsten bis zu den Veteranen, in allen Disziplinen waren wir mit spitzen Leuten aus dem gesamten Bundesgebiet vertreten. Ihr habt alles gegeben und unser Team ISKA Germany würdig gegen starke Kämpfer aus aller Welt vertreten.",
+        "Im Gesamt Medaillenspiegel sind wir mit über 60x Edelmetall auf Platz 4.",
+        "Auch diesmal hatten wir viel Spaß, der kommt trotz aller Anspannung und anstrengender Kämpfe nie zu kurz.",
+        "Wir blicken nach diesen Tagen in Irland positiv ins Jahr 2020, wo wir uns zur Weltmeisterschaft und US Open in Florida hoffentlich wiedersehen.",
+        "Erste Qualifikations Möglichkeit habt ihr am 16.11. auf der IDM in Würzburg.",
+        "In diesem Sinne…",
+        "1, 2, 3 Germany 🇩🇪 it’s #sxowtime"
+      ],
+      "link": "https://www.facebook.com/ISKAGermany.eu/"
+    },
+    {
+      "id": "iska-worlds-2019",
+      "date": "2019-10-07",
+      "title": "ISKA Worlds 2019 in Cork Irland",
+      "cat": "news",
+      "img": "",
+      "text": [
+        "ISKA Worlds 2019",
+        "15. bis 19. Oktober 2019",
+        "Neptune Stadium Cork City Irland",
+        "Die ISKA Amateur Members Association World Championships 2019 werden vom 15. bis 19. Oktober 2019 im Neptune Stadium in Cork (Irland) ausgetragen und umfassen sowohl Ringsportarten als auch Tatami-Sportarten.",
+        "Halbfinale bei der EM in Kiew: Oliver Zink beim Kick gegen seinen Gegner aus Usbekistan.",
+        "© Zink",
+        "2018 war das bisher erfolgreichste Jahr der ISKA Amateur Member Association World Championships, an der über 1200 Teilnehmer aus 40 Ländern teilnahmen.",
+        "Die Kiewer Meisterschaft wurde von Vitaliy Klitscho eröffnet und von sechs TV-Nachrichtenkanälen übertragen. Das Finale der Montego Bay Championships war eine abendliche Gala-Show mit ausgewählten Finalspielen und live von CVMTV übertragenen Mannschaftsspielen, an der der ehemalige unangefochtene Weltmeister im Schwergewicht im Boxen, Lennox Lewis, als besonderer Gast teilnahm.",
+        "2019 könnte das wichtigste Jahr für die ISKA-World sein. Es hat alle Vorraussetzungen, um wirklich großartige Weltmeisterschaften zu werden.",
+        "OLIVER ZINK VERTEIDIGT DEN VETERANEN-WELTMEISTER-TITEL IM KICKBOXEN",
+        "Wir freuen uns auf Cork City!"
+      ],
+      "link": ""
+    },
+    {
+      "id": "das-war-ein-fest",
+      "date": "2019-06-19",
+      "title": "DAS WAR EIN FEST!",
+      "cat": "news",
+      "img": "assets/img/news/fest.jpg",
+      "text": [
+        "DAS WAR EIN FEST!",
+        "Mit zahlreichen,spannenden Kämpfen, gutem Essen und tollen Leuten haben wir am 16.September unser 5. Jubiläum feiern dürfen!",
+        "Danke an alle die da waren und für diesen unfassbaren 5 Jahre!",
+        "Auf die nächsten 5!",
+        "euer studio68-Team"
+      ],
+      "link": ""
+    },
+    {
+      "id": "der-sport-hat-mir-immer-halt-gegeben",
+      "date": "2018-10-25",
+      "title": "Der Sport hat mir immer Halt gegeben",
+      "cat": "presse",
+      "img": "assets/img/news/presse-halt.jpg",
+      "text": [
+        "HEDDESHEIM OLIVER ZINK HOLT DEN VETERANEN-WELTMEISTER-TITEL IM KICKBOXEN / TRAINER WILL SELBSTVERTRAUEN UND RESPEKT AN SCHÜLER WEITERGEBEN",
+        "„Ich habe im Alter alles erreicht, wovon ich in jungen Jahren geträumt habe“, sagt Oliver Zink und strahlt. „Alter“ ist relativ. Zink ist 44 Jahre. Vor 20, 25 Jahren begann er mit dem Kickboxen, gelangte bald zum Muay Thai, dem Thaiboxen. „Ich war immer sehr ehrgeizig und habe hart trainiert“, blickt er zurück."
+      ],
+      "link": "https://www.morgenweb.de/mannheimer-morgen_artikel,-heddesheim-der-sport-hat-mir-immer-halt-gegeben-_arid,1324478.html"
+    },
+    {
+      "id": "bei-wm-erfolgreich-weinheimer-nachrichten",
+      "date": "2015-11-08",
+      "title": "Bei WM erfolgreich – Weinheimer Nachrichten",
+      "cat": "presse",
+      "img": "assets/img/news/presse-wm-2015.jpg",
+      "text": [
+        "Cheftrainer und Studio68-Inhaber Oliver Zink hatte sich spontan entschlossen in der Veteranenklasse im Kickboxen Ü35 anzutreten. Obwohl er seit über vier Jahren nicht mehr aktiv im Ring stand, siegte der 41-jährige Heddesheimer durch K.o. in Runde eins im Finale und holte somit Gold für Deutschland im Kickboxen der WFMC 2015.",
+        "Weinheimer Nachrichten"
+      ],
+      "link": "https://www.wnoz.de/Bei-WM-erfolgreich-213e26ff-0379-4ed4-b225-5706379afc59-ds"
+    }
+  ],
+  "partners": [
+    {
+      "name": "Restaurant Akropolis Heddesheim",
+      "logo": "assets/img/partner/akropolis.png",
+      "url": ""
+    },
+    {
+      "name": "Kimmel",
+      "logo": "assets/img/partner/kimmel.png",
+      "url": ""
+    },
+    {
+      "name": "aktio",
+      "logo": "assets/img/partner/aktio.png",
+      "url": ""
+    },
+    {
+      "name": "Willi und Thomas Beikert – Sanitär, Heizung, Klima",
+      "logo": "assets/img/partner/beikert.png",
+      "url": ""
+    },
+    {
+      "name": "Huther Immobilien",
+      "logo": "assets/img/partner/huther.png",
+      "url": ""
+    },
+    {
+      "name": "K1 Kampfsportartikel",
+      "logo": "assets/img/partner/k1.png",
+      "url": ""
+    },
+    {
+      "name": "Malerbetrieb TC Raumgestaltung",
+      "logo": "assets/img/partner/malerbetrieb.png",
+      "url": ""
+    },
+    {
+      "name": "move Projektentwicklung",
+      "logo": "assets/img/partner/move.png",
+      "url": ""
+    },
+    {
+      "name": "Werbemacher.Team",
+      "logo": "assets/img/partner/werbemacher.png",
+      "url": ""
+    }
+  ],
+  "muskelfabrik": {
+    "defs": [
+      {
+        "w": "Muskelfabrik, die",
+        "ipa": "[ˈmʊskl̩fabʁiːk]",
+        "d": "Muckibude. Das Original in der Lessingstraße 6, 68542 Heddesheim."
+      },
+      {
+        "w": "Muckibude, die",
+        "ipa": "[ˈmʊkiˌbuːdə]",
+        "d": "Ein besonderes Fitnessstudio für alle, die Wert auf ordentliches Krafttraining legen und keine Lust mehr auf schnöselige Wellnesstempel, anonyme Billigketten oder hippe Loft-Fitness-Fabriken ohne Atmosphäre haben."
+      }
+    ],
+    "text": "Der Trend geht zurück zu den Wurzeln des klassischen Kraft- und Fitnesssports. Wir geben euch, was ihr wollt: schnörkelloses, ehrliches Krafttraining in familiärer Atmosphäre. Ohne Dresscode, ohne schräge Blicke und ohne Lautstärkenbegrenzung."
+  }
 }

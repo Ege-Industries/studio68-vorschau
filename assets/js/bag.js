@@ -194,7 +194,7 @@ export function initBag({ canvas, hero, anchor, onHit, onHover }) {
     camera.aspect = w / h; camera.updateProjectionMatrix();
     const vh = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     unit = vh / h;
-    const cx = ar.left - hr.left + ar.width * (mob ? .36 : .5);
+    const cx = ar.left - hr.left + ar.width * (mob ? .64 : .5);
     const cy = ar.top - hr.top + ar.height * (mob ? .5 : .55);
     const hpx = ar.height * (mob ? .8 : .8);
     const s = (hpx * unit) / H;

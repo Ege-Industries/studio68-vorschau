@@ -156,3 +156,6 @@ details.sec[open] > summary::after { content: '–'; }
 }
 
 .demo-note { background: var(--hi); color: #0d0d0e; font: 700 12px var(--mono); letter-spacing: .04em; padding: 12px 14px; margin-bottom: 18px; }
+
+a.b { color: var(--tx); }
+a.b.b-orange { color: #0d0d0e; }

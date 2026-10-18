@@ -250,7 +250,7 @@ function renderAnfragen() {
   const n = bookings.filter(b => b.status === 'neu').length;
   $('#newCount').textContent = n || '';
   const p = $('#p-anfragen');
-  p.innerHTML = `<h2>Probetrainings</h2><p class="hint">Alle Anfragen von der Website. Eine Mail geht zusätzlich an ${esc((D && D.studio.email) || 'das Studio')}. Anfragen werden nach 180 Tagen automatisch gelöscht.</p>` +
+  p.innerHTML = `<h2>Anfragen</h2><p class="hint">Probetrainings und Nachrichten aus dem Kontaktformular. Eine Mail geht zusätzlich an ${esc((D && D.studio.email) || 'das Studio')}. Anfragen werden nach 180 Tagen automatisch gelöscht.</p>` +
     (bookings.length ? bookings.map(b => {
       const tel = (b.phone || '').replace(/[^\d+]/g, ''), wa = tel.replace(/^\+/, '').replace(/^0/, '49');
       const waTxt = encodeURIComponent(`Hi ${b.name.split(' ')[0]}, hier ist das Studio68 Heddesheim. Dein Probetraining (${b.discName}${b.slot ? ', ' + b.slot.split(' · ').slice(0, 2).join(' · ') : ''}) ist bestätigt. Bring Sportkleidung, Wasser und ein Handtuch mit. Bis dann!`);
@@ -258,7 +258,7 @@ function renderAnfragen() {
       return `<div class="bk ${b.status === 'neu' ? 'neu' : ''}" data-id="${b.id}">
         <div class="bk-h"><b>${esc(b.name)}</b><span class="bk-meta">${isNaN(created) ? '' : created.toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</span></div>
         <div class="bk-what"><strong>${esc(b.discName || b.disc)}</strong> · ${esc(b.slot || 'Termin nach Absprache')}</div>
-        <div class="bk-meta">Erfahrung: ${esc(b.level || '–')}${b.age ? ' · Kind ' + esc(b.age) + ' J.' : ''}${b.phone ? ' · ' + esc(b.phone) : ''}${b.email ? ' · ' + esc(b.email) : ''}</div>
+        <div class="bk-meta">${b.type === 'nachricht' ? '' : `Erfahrung: ${esc(b.level || '–')}${b.age ? ' · Kind ' + esc(b.age) + ' J.' : ''} · `}${[b.phone, b.email].filter(Boolean).map(esc).join(' · ')}</div>
         ${b.msg ? `<div class="bk-meta" style="color:var(--tx)">„${esc(b.msg)}“</div>` : ''}
         <div class="st">${STATI.map(([v, l]) => `<button class="${b.status === v ? 'on' : ''}" data-st="${v}">${l}</button>`).join('')}</div>
         <div class="row">${tel ? `<a class="b b-sm" href="tel:${esc(tel)}">Anrufen</a><a class="b b-sm" target="_blank" rel="noopener" href="https://wa.me/${esc(wa)}?text=${waTxt}">WhatsApp</a>` : ''}
@@ -332,7 +332,21 @@ function renderMehr() {
     ${fld('Orange markierter Teil der Mission', 'about.missionMark', (D.about || {}).missionMark)}
     ${fld('Säulen (eine Zeile: Titel: Text)', 'about.pillars', ((D.about || {}).pillars || []).map(x => `${x.t}: ${x.d}`).join('\n'), 'area', 'data-td')}
     ${fld('Was uns ausmacht (eine Zeile: Titel: Text)', 'about.values', ((D.about || {}).values || []).map(x => `${x.t}: ${x.d}`).join('\n'), 'area', 'data-td')}
-    ${fld('Im Ring / Erfolge (eine Zeile: Titel: Text)', 'about.milestones', ((D.about || {}).milestones || []).map(x => `${x.t}: ${x.d}`).join('\n'), 'area', 'data-td')}
+    ${fld('Erfolge (eine Zeile: Jahr | Titel | Name)', 'about.wins', ((D.about || {}).wins || []).map(x => `${x.y} | ${x.t} | ${x.who}`).join('\n'), 'area', 'data-wins rows="6"')}
+  </div></details>
+  <details class="sec"><summary>News & Presse</summary><div class="sec-b">
+    <p class="hint">Neue Beiträge erscheinen auf „News“ (und bei Presse, wenn so markiert). Absätze mit einer Leerzeile trennen.</p>
+    <button class="b b-orange" id="addNews">+ Neuer Beitrag</button>
+    ${(D.news || []).map((n, i) => `<div class="list-it">
+      <div class="slots" style="grid-template-columns:160px 1fr">${slot('Bild', '', n.img, `news.${i}.img`)}<div style="display:grid;gap:8px">
+      ${fld('Titel', `news.${i}.title`, n.title)}<div class="grid2">${fld('Datum', `news.${i}.date`, n.date, 'date')}<label class="fld"><span>Art</span><select data-p="news.${i}.cat">${[['news', 'News'], ['presse', 'Presse'], ['beides', 'News + Presse']].map(([v, l]) => `<option value="${v}" ${n.cat === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label></div></div></div>
+      ${fld('Text', `news.${i}.text`, (n.text || []).join('\n\n'), 'area', 'data-paras rows="5"')}
+      ${fld('Link zum Originalbeitrag (optional)', `news.${i}.link`, n.link, 'url')}
+      <div class="row"><span class="sp"></span><button class="b b-red b-sm" data-delnews="${i}">Beitrag löschen</button></div></div>`).join('')}
+  </div></details>
+  <details class="sec"><summary>Partner</summary><div class="sec-b">
+    ${(D.partners || []).map((p, i) => `<div class="list-it"><div class="slots" style="grid-template-columns:160px 1fr">${slot('Logo', '', p.logo, `partners.${i}.logo`)}<div style="display:grid;gap:8px">${fld('Name', `partners.${i}.name`, p.name)}${fld('Webseite (optional)', `partners.${i}.url`, p.url, 'url')}<div class="row"><span class="sp"></span><button class="b b-red b-sm" data-delpartner="${i}">Entfernen</button></div></div></div></div>`).join('')}
+    <button class="b b-ghost" id="addPartner">+ Partner</button>
   </div></details>
   <details class="sec"><summary>Kids-Fragen (Eltern)</summary><div class="sec-b">
     ${(D.kidsFaq || []).map((f, i) => `<div class="list-it">${fld('Frage', `kidsFaq.${i}.q`, f.q)}${fld('Antwort', `kidsFaq.${i}.a`, f.a, 'area')}<div class="row"><span class="sp"></span><button class="b b-red b-sm" data-delkfaq="${i}">Entfernen</button></div></div>`).join('')}
@@ -357,12 +371,16 @@ function renderMehr() {
     if (el.hasAttribute('data-num')) v = v === '' ? '' : Number(v);
     if (el.hasAttribute('data-lines')) v = v.split('\n').map(s => s.trim()).filter(Boolean);
     if (el.hasAttribute('data-csv')) v = v.split(',').map(s => s.trim()).filter(Boolean);
+    if (el.hasAttribute('data-paras')) v = v.split(/\n\s*\n/).map(x => x.trim()).filter(Boolean);
+    if (el.hasAttribute('data-wins')) v = v.split('\n').map(l => { const [y, t, w] = l.split('|').map(x => (x || '').trim()); return { y, t, who: w || '' }; }).filter(x => x.y && x.t);
     if (el.hasAttribute('data-td')) v = v.split('\n').map(l => { const [t, ...r] = l.split(':'); return { t: t.trim(), d: r.join(':').trim() }; }).filter(x => x.t);
     if (el.hasAttribute('data-stats')) v = v.split('\n').map(l => { const [k, ...r] = l.split(':'); return { k: k.trim(), v: r.join(':').trim() }; }).filter(s => s.k);
     setP(path, v); dirty();
   };
   p.onchange = async e => {
-    const inp = e.target; if (inp.type !== 'file' || !inp.files[0]) return;
+    const inp = e.target;
+    if (inp.tagName === 'SELECT' && inp.dataset.p) { setP(inp.dataset.p, inp.value); dirty(); return; }
+    if (inp.type !== 'file' || !inp.files[0]) return;
     const box = inp.closest('.slot'); box.classList.add('busy');
     try { setP(inp.dataset.up, await upload(inp.files[0])); renderMehr(); dirty(); } catch (x) { box.classList.remove('busy'); toast(x.message, true); }
   };
@@ -372,6 +390,10 @@ function renderMehr() {
     if (hd) { const h = D.studio.hours[+hd.dataset.hd], dw = +hd.dataset.dw; h.days = h.days.includes(dw) ? h.days.filter(x => x !== dw) : [...h.days, dw].sort(); renderMehr(); dirty(); return; }
     if (t.id === 'addCoach') { (D.coaches = D.coaches || []).push({ name: '', role: '', text: '', photo: '', stats: [] }); renderMehr(); dirty(); return; }
     if (t.dataset.delcoach !== undefined) { if (confirm('Coach entfernen?')) { D.coaches.splice(+t.dataset.delcoach, 1); renderMehr(); dirty(); } return; }
+    if (t.id === 'addNews') { (D.news = D.news || []).unshift({ id: 'n' + Date.now().toString(36), date: key(now()), title: 'Neuer Beitrag', cat: 'news', img: '', text: [], link: '' }); renderMehr(); dirty(); return; }
+    if (t.dataset.delnews !== undefined) { if (confirm('Beitrag löschen?')) { D.news.splice(+t.dataset.delnews, 1); renderMehr(); dirty(); } return; }
+    if (t.id === 'addPartner') { (D.partners = D.partners || []).push({ name: '', logo: '', url: '' }); renderMehr(); dirty(); return; }
+    if (t.dataset.delpartner !== undefined) { if (confirm('Partner entfernen?')) { D.partners.splice(+t.dataset.delpartner, 1); renderMehr(); dirty(); } return; }
     if (t.id === 'addKFaq') { (D.kidsFaq = D.kidsFaq || []).push({ q: '', a: '' }); renderMehr(); dirty(); return; }
     if (t.dataset.delkfaq !== undefined) { D.kidsFaq.splice(+t.dataset.delkfaq, 1); renderMehr(); dirty(); return; }
     if (t.id === 'addFaq') { (D.faq = D.faq || []).push({ q: '', a: '' }); renderMehr(); dirty(); return; }
