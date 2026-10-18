@@ -1,0 +1,14 @@
+:root { --paper:#e6e5df; --ink:#0d0d0e; --orange:#ff6b1a; --line:rgba(13,13,14,.2); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 'Inter Tight', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 18px clamp(16px, 4vw, 56px); border-bottom: 1px solid var(--line); }
+header a { font: 800 24px/1 'Tektur', sans-serif; text-decoration: none; color: inherit; }
+header a b { color: var(--orange); }
+header .back { font: 600 12px 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+main { max-width: 780px; margin: 0 auto; padding: 60px clamp(16px, 4vw, 40px) 100px; }
+h1 { font: 400 clamp(56px, 10vw, 110px)/.9 'Anton', Impact, sans-serif; text-transform: uppercase; margin: 0 0 30px; }
+h2 { font: 400 28px/1.1 'Anton', Impact, sans-serif; text-transform: uppercase; margin: 40px 0 10px; letter-spacing: .01em; }
+p, li { max-width: 68ch; }
+a { color: inherit; }
+.k { font: 500 11px 'JetBrains Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+.note { border: 1.5px solid var(--ink); padding: 12px 14px; font-size: 14px; background: #f2f1ec; }

@@ -1,0 +1,685 @@
+{
+  "rev": 1,
+  "studio": {
+    "name": "Studio68 Heddesheim",
+    "street": "Lessingstraße 6",
+    "zip": "68542",
+    "city": "Heddesheim",
+    "phone": "+4915254058546",
+    "phoneDisplay": "01525 405 854 6",
+    "whatsapp": "4915254058546",
+    "email": "info@studio68-heddesheim.de",
+    "instagram": "https://www.instagram.com/studio_sixtyeight/",
+    "facebook": "https://www.facebook.com/studio68sixtyeight",
+    "hours": [
+      {
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": "15:00",
+        "to": "21:00"
+      },
+      {
+        "days": [
+          6
+        ],
+        "from": "10:00",
+        "to": "14:00"
+      },
+      {
+        "days": [
+          0
+        ],
+        "from": "11:00",
+        "to": "13:00"
+      }
+    ]
+  },
+  "ticker": [
+    "Das erste Probetraining ist kostenlos",
+    "Neu: Kickboxen nur für Frauen, Mo + Mi 17 Uhr",
+    "Krav Maga nur für Frauen: coming soon"
+  ],
+  "photos": {
+    "hero": "assets/img/sparring.jpg",
+    "heroSmall": "assets/img/trophies.jpg",
+    "night": "assets/img/gym-functional.jpg",
+    "contact": "assets/img/reception.jpg"
+  },
+  "gallery": [
+    {
+      "src": "assets/img/reception.jpg",
+      "caption": "Empfang. Orange ist Pflicht."
+    },
+    {
+      "src": "assets/img/gym-functional.jpg",
+      "caption": "Functional-Fläche"
+    },
+    {
+      "src": "assets/img/trophies.jpg",
+      "caption": "Die Gürtel-Vitrine"
+    },
+    {
+      "src": "assets/img/gym-tire.jpg",
+      "caption": "Tire, Box, Air Bike"
+    },
+    {
+      "src": "assets/img/kids-group.jpg",
+      "caption": "Kids-Team"
+    },
+    {
+      "src": "assets/img/gym-cardio.jpg",
+      "caption": "Muskelfabrik"
+    },
+    {
+      "src": "assets/img/sparring.jpg",
+      "caption": "Respekt vor dem Sparring"
+    },
+    {
+      "src": "assets/img/gym-machines-wide.jpg",
+      "caption": "Kraftgeräte"
+    }
+  ],
+  "video": "",
+  "disciplines": [
+    {
+      "id": "mma",
+      "name": "MMA",
+      "sub": "Mixed Martial Arts",
+      "color": "#ff6b1a",
+      "tagline": "Entdecke deine Stärke. Überwinde deine Grenzen.",
+      "text": "Schlagen, treten, ringen, Boden: MMA verbindet alles, was im Kampfsport funktioniert. Du lernst Striking und Grappling Schritt für Schritt und baust nebenbei eine Kondition auf, die du dir nicht zugetraut hättest.",
+      "points": [
+        "Schlag- & Tritttechniken",
+        "Bodenkampf & Grappling",
+        "Kondition, Kraft & Beweglichkeit",
+        "Kein Vorwissen nötig"
+      ],
+      "for": [
+        "Anfänger",
+        "Fortgeschrittene"
+      ],
+      "intensity": 5,
+      "photo": ""
+    },
+    {
+      "id": "muaythai",
+      "name": "Muay Thai / K1",
+      "sub": "Die Kunst der acht Gliedmaßen",
+      "color": "#ffc21a",
+      "tagline": "Trainiere mit mehrfachen Welt- und Europameistern.",
+      "text": "Fäuste, Ellbogen, Knie, Schienbeine: Muay Thai ist Kampfsport mit klarer Technik und starkem Charakter. K1 kombiniert die besten Stand-up-Techniken. Samstags gibt es Technik und Sparring für Fortgeschrittene.",
+      "points": [
+        "Echt. Effektiv. Traditionell.",
+        "Von aktiven Champions lernen",
+        "Stärke, Ausdauer, Beweglichkeit",
+        "Sehr geeignet für Anfänger & Frauen"
+      ],
+      "for": [
+        "Anfänger",
+        "Fortgeschrittene",
+        "Frauen"
+      ],
+      "intensity": 5,
+      "photo": ""
+    },
+    {
+      "id": "boxen",
+      "name": "Boxen",
+      "sub": "Hier lernst du, was wirklich zählt",
+      "color": "#5fe04a",
+      "tagline": "Kein Talent? Kein Problem. Nur Wille zählt.",
+      "text": "Klassisches Boxen mit eigenen Gruppen für Anfänger und Fortgeschrittene. Technik von den Grundlagen bis zur Kombination, Footwork, Kraft und Ausdauer. Und für alle, die mehr wollen: Wettkampfvorbereitung vom Amateur bis zum Profi.",
+      "points": [
+        "Technik & Kombinationen",
+        "Footwork & Bewegung",
+        "Kraft & Ausdauer",
+        "Wettkampfvorbereitung"
+      ],
+      "for": [
+        "Anfänger",
+        "Fortgeschrittene"
+      ],
+      "intensity": 4,
+      "photo": ""
+    },
+    {
+      "id": "kickboxen",
+      "name": "Kickboxen Frauen",
+      "sub": "Starke Frauen. Starkes Training.",
+      "color": "#ff4fa3",
+      "tagline": "Ohne Druck. Ohne Vergleiche.",
+      "text": "Reines Frauentraining in motivierender Atmosphäre. Schlag- und Tritttechniken, effektives Ganzkörpertraining und jede Menge Selbstbewusstsein für den Alltag. Bestens geeignet für Anfängerinnen, Neueinsteigerinnen und Fortgeschrittene.",
+      "points": [
+        "Schlag- & Tritttechniken",
+        "Effektives Ganzkörpertraining",
+        "Kraft, Ausdauer & Selbstbewusstsein",
+        "Keine Vorkenntnisse nötig"
+      ],
+      "for": [
+        "Frauen",
+        "Anfänger",
+        "Fortgeschrittene"
+      ],
+      "intensity": 3,
+      "photo": ""
+    },
+    {
+      "id": "kravmaga",
+      "name": "Krav Maga",
+      "sub": "Mehr als nur Selbstverteidigung",
+      "color": "#2fd6c3",
+      "tagline": "Ein System für jede Situation.",
+      "text": "Einfache, effektive Techniken für reale Bedrohungssituationen. Dazu Ganzkörpertraining und Stressresistenz, damit du ruhig und handlungsfähig bleibst, wenn es zählt. Krav Maga nur für Frauen: coming soon.",
+      "points": [
+        "Effizient & realistisch",
+        "Fitness & Kondition",
+        "Stressresistenz",
+        "Sehr geeignet für Anfänger & Frauen"
+      ],
+      "for": [
+        "Anfänger",
+        "Frauen"
+      ],
+      "intensity": 4,
+      "photo": ""
+    },
+    {
+      "id": "kids",
+      "name": "Kids 4–12",
+      "sub": "Kinder stärken. Zukunft fördern.",
+      "color": "#4aa8ff",
+      "tagline": "Spielerisch lernen. Stark werden.",
+      "text": "Krav Maga und Kickboxen für Minis (4–7) und Kids (8–12). Altersgerecht, spielerisch und mit jeder Menge Spaß. Fördert Selbstvertrauen, Disziplin, Respekt, Koordination und Teamgeist.",
+      "points": [
+        "Selbstverteidigung & Sicherheit",
+        "Selbstvertrauen",
+        "Koordination & Konzentration",
+        "Teamgeist"
+      ],
+      "for": [
+        "Minis 4–7",
+        "Kids 8–12"
+      ],
+      "intensity": 2,
+      "photo": "assets/img/kids-group.jpg"
+    },
+    {
+      "id": "fightteam",
+      "name": "Fight Team",
+      "sub": "Sparring. Wettkampf. Hausgala.",
+      "color": "#ff2e3b",
+      "tagline": "Für alle, die mehr wollen.",
+      "text": "Sparring am Samstag, Wettkampfvorbereitung und eigene Kampfabende im Studio. Unsere Vitrine ist voll mit Gürteln. Platz für deinen ist noch da.",
+      "points": [
+        "Sparring Muay Thai & Boxen",
+        "Wettkampfvorbereitung",
+        "Wettkämpfer Kids",
+        "Eigene Hausgala"
+      ],
+      "for": [
+        "Fortgeschrittene"
+      ],
+      "intensity": 5,
+      "photo": "assets/img/trophies.jpg",
+      "match": [
+        "sparring"
+      ]
+    },
+    {
+      "id": "muskelfabrik",
+      "name": "Muskelfabrik",
+      "sub": "Back to the roots",
+      "color": "#b9b9b9",
+      "tagline": "Der Kraft- und Fitnessraum im Studio68.",
+      "text": "Kraftgeräte, Cardio und eine Functional-Fläche mit Tire, Ropes und Air Bike. Trainiere zu allen Öffnungszeiten. Mit dem 24-Stunden-Zugang auch rund um die Uhr.",
+      "points": [
+        "Kraft- & Cardiogeräte",
+        "Functional Area",
+        "Zu allen Öffnungszeiten",
+        "24-h-Zugang: +5,99 €"
+      ],
+      "for": [
+        "Alle"
+      ],
+      "intensity": 3,
+      "photo": "assets/img/gym-machines-1.jpg",
+      "open": true
+    }
+  ],
+  "schedule": [
+    {
+      "id": "s01",
+      "day": 1,
+      "start": "17:00",
+      "end": "18:00",
+      "disc": "kickboxen",
+      "title": "Kickboxen Frauen",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s02",
+      "day": 1,
+      "start": "18:00",
+      "end": "20:00",
+      "disc": "muaythai",
+      "title": "Muay Thai / K1",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s03",
+      "day": 1,
+      "start": "20:00",
+      "end": "21:30",
+      "disc": "mma",
+      "title": "MMA",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s04",
+      "day": 2,
+      "start": "16:00",
+      "end": "17:00",
+      "disc": "kids",
+      "title": "Kids Krav Maga",
+      "level": "Minis 4–7"
+    },
+    {
+      "id": "s05",
+      "day": 2,
+      "start": "17:00",
+      "end": "18:00",
+      "disc": "kids",
+      "title": "Kids Krav Maga",
+      "level": "Kids 8–12"
+    },
+    {
+      "id": "s06",
+      "day": 2,
+      "start": "18:00",
+      "end": "19:00",
+      "disc": "boxen",
+      "title": "Boxen",
+      "level": "Anfänger"
+    },
+    {
+      "id": "s07",
+      "day": 2,
+      "start": "19:00",
+      "end": "20:30",
+      "disc": "boxen",
+      "title": "Boxen",
+      "level": "Fortgeschrittene"
+    },
+    {
+      "id": "s08",
+      "day": 3,
+      "start": "17:00",
+      "end": "18:00",
+      "disc": "kickboxen",
+      "title": "Kickboxen Frauen",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s09",
+      "day": 3,
+      "start": "18:00",
+      "end": "19:00",
+      "disc": "kravmaga",
+      "title": "Krav Maga",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s10",
+      "day": 3,
+      "start": "19:00",
+      "end": "20:30",
+      "disc": "muaythai",
+      "title": "Muay Thai / K1",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s11",
+      "day": 4,
+      "start": "16:00",
+      "end": "17:00",
+      "disc": "kids",
+      "title": "Kids Kickboxen",
+      "level": "Minis 4–7"
+    },
+    {
+      "id": "s12",
+      "day": 4,
+      "start": "17:00",
+      "end": "18:00",
+      "disc": "kids",
+      "title": "Kids Kickboxen",
+      "level": "Kids 8–12"
+    },
+    {
+      "id": "s13",
+      "day": 4,
+      "start": "18:00",
+      "end": "19:00",
+      "disc": "boxen",
+      "title": "Boxen",
+      "level": "Anfänger"
+    },
+    {
+      "id": "s14",
+      "day": 4,
+      "start": "19:00",
+      "end": "20:30",
+      "disc": "boxen",
+      "title": "Boxen",
+      "level": "Fortgeschrittene"
+    },
+    {
+      "id": "s15",
+      "day": 5,
+      "start": "17:00",
+      "end": "18:00",
+      "disc": "kravmaga",
+      "title": "Krav Maga",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s16",
+      "day": 5,
+      "start": "18:00",
+      "end": "19:30",
+      "disc": "muaythai",
+      "title": "Muay Thai / K1",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s17",
+      "day": 5,
+      "start": "19:30",
+      "end": "21:00",
+      "disc": "mma",
+      "title": "MMA",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s18",
+      "day": 6,
+      "start": "11:00",
+      "end": "12:00",
+      "disc": "muaythai",
+      "title": "Muay Thai Technik",
+      "level": "Fortgeschrittene"
+    },
+    {
+      "id": "s19",
+      "day": 6,
+      "start": "12:00",
+      "end": "13:00",
+      "disc": "muaythai",
+      "title": "Muay Thai Sparring",
+      "level": "Advanced",
+      "tags": [
+        "sparring"
+      ]
+    },
+    {
+      "id": "s20",
+      "day": 6,
+      "start": "12:00",
+      "end": "13:00",
+      "disc": "boxen",
+      "title": "Box-Sparring",
+      "level": "Fortgeschrittene",
+      "tags": [
+        "sparring"
+      ]
+    },
+    {
+      "id": "s21",
+      "day": 0,
+      "start": "10:00",
+      "end": "11:00",
+      "disc": "mma",
+      "title": "MMA",
+      "level": "Alle Level"
+    },
+    {
+      "id": "s22",
+      "day": 0,
+      "start": "11:00",
+      "end": "12:30",
+      "disc": "muaythai",
+      "title": "Muay Thai / K1",
+      "level": "Alle Level"
+    }
+  ],
+  "cancellations": [],
+  "prices": {
+    "durations": [
+      6,
+      12,
+      24
+    ],
+    "plans": [
+      {
+        "id": "all",
+        "name": "Alle Kurse",
+        "desc": "Kampfsport, alle Kurse und Fitnessstudio. 7 Tage die Woche.",
+        "prices": {
+          "6": 75,
+          "12": 65,
+          "24": 55
+        },
+        "featured": true,
+        "features": [
+          "Alle Kampfsportkurse",
+          "Muskelfabrik inklusive",
+          "Sparring am Samstag",
+          "7 Tage die Woche"
+        ]
+      },
+      {
+        "id": "boxen",
+        "name": "Boxen",
+        "desc": "Alle Boxkurse inklusive Fitnessstudio.",
+        "prices": {
+          "6": 70,
+          "12": 60,
+          "24": 55
+        }
+      },
+      {
+        "id": "krav",
+        "name": "Krav Maga",
+        "desc": "Krav Maga inklusive Fitnessstudio.",
+        "prices": {
+          "6": 60,
+          "12": 50,
+          "24": 45
+        }
+      },
+      {
+        "id": "kids",
+        "name": "Kindertraining",
+        "desc": "Dienstag + Donnerstag, Minis und Kids.",
+        "prices": {
+          "6": 70,
+          "12": 60,
+          "24": 55
+        }
+      },
+      {
+        "id": "fitness",
+        "name": "Muskelfabrik",
+        "desc": "Kraft- und Fitnessraum zu allen Öffnungszeiten.",
+        "prices": {
+          "6": 40,
+          "12": 35,
+          "24": 30
+        }
+      }
+    ],
+    "extras": [
+      {
+        "label": "Erstes Probetraining",
+        "value": "kostenlos"
+      },
+      {
+        "label": "Anmeldegebühr (einmalig)",
+        "value": "30 €"
+      },
+      {
+        "label": "24-Stunden-Zugang",
+        "value": "+ 5,99 € / Monat"
+      },
+      {
+        "label": "Personal Training",
+        "value": "auf Anfrage"
+      }
+    ]
+  },
+  "event": {
+    "title": "Fight Night",
+    "kicker": "Hausgala im Studio68",
+    "date": "",
+    "text": "K1, Boxen und Muay Thai im eigenen Studio. Der nächste Termin kommt hier und auf Instagram.",
+    "video": ""
+  },
+  "coaches": [],
+  "reviews": [
+    {
+      "name": "Carl Roland Hülse",
+      "text": "Ich hatte zuvor keinerlei Berührungspunkte mit Kampfsport und war sehr positiv überrascht, wie vielfältig das Training dort ist. Auch als Anfänger ist man dort bestens aufgehoben. Die Atmosphäre ist respektvoll und familiär.",
+      "mark": "auch als Anfänger ist man dort bestens aufgehoben"
+    },
+    {
+      "name": "No Wonder",
+      "text": "Mein Sohn trainiert mittlerweile seit 2018 hier, das sagt glaube ich bereits alles über die gute Qualität des Studios. Die Trainer der verschiedenen Kurse sind allesamt Experten ihres Faches, auch menschlich sind sie alle top!",
+      "mark": "allesamt Experten ihres Faches"
+    },
+    {
+      "name": "Yan_",
+      "text": "Tolle Atmosphäre während des Trainings. Der neue Boxtrainer nimmt sich für jeden sehr viel Zeit und ist zudem auch geduldig mit einem.",
+      "mark": "nimmt sich für jeden sehr viel Zeit"
+    },
+    {
+      "name": "Caglar Satici",
+      "text": "Das Studio68 ist einfach mit das beste Studio! Oli und sein ganzes Team: unfassbar gerade und loyale Menschen mit Liebe und Respekt. Hier ist jeder gut aufgehoben und ready für alles!",
+      "mark": "Hier ist jeder gut aufgehoben"
+    },
+    {
+      "name": "Marko Vunic",
+      "text": "Ich bin zwar schon eine Weile kein Mitglied mehr, aber das Studio und die Leute dort sind super. Kann ich nur empfehlen!",
+      "mark": "Kann ich nur empfehlen"
+    }
+  ],
+  "reviewCount": 91,
+  "faq": [
+    {
+      "q": "Ich habe null Erfahrung. Geht das?",
+      "a": "Genau dafür ist das Probetraining da. Fast alle Kurse sind für Anfänger gemacht, die Coaches holen dich da ab, wo du stehst."
+    },
+    {
+      "q": "Was kostet das Probetraining?",
+      "a": "Nichts. Das erste Probetraining ist kostenlos und unverbindlich."
+    },
+    {
+      "q": "Was muss ich mitbringen?",
+      "a": "Bequeme Sportkleidung, etwas zu trinken und ein Handtuch. Noch keine Handschuhe? Einfach bei der Buchung Bescheid geben."
+    },
+    {
+      "q": "Ab welchem Alter können Kinder mitmachen?",
+      "a": "Ab 4 Jahren bei den Minis (4–7), danach bei den Kids (8–12). Dienstag Krav Maga, Donnerstag Kickboxen."
+    },
+    {
+      "q": "Gibt es Training nur für Frauen?",
+      "a": "Ja: Kickboxen nur für Frauen am Montag und Mittwoch von 17 bis 18 Uhr. Krav Maga nur für Frauen kommt bald."
+    },
+    {
+      "q": "Wie lange läuft ein Vertrag?",
+      "a": "Du wählst 6, 12 oder 24 Monate. Je länger, desto günstiger im Monat. Dazu kommt einmalig die Anmeldegebühr von 30 €."
+    }
+  ],
+  "about": {
+    "title": "Wir sind Studio68.",
+    "intro": "Ein Kampfsport- und Fitnessstudio in Heddesheim, in dem du eine Persönlichkeit bist und keine Nummer. Muay Thai, K1, MMA, Boxen, Krav Maga und die Muskelfabrik unter einem Dach. Mit Coaches, die selbst im Ring standen, und einer Atmosphäre, die respektvoll und familiär ist.",
+    "mission": "Wir sind ein Fitnessunternehmen, das sich zum Ziel gesetzt hat, das Leben der Menschen zu verändern.",
+    "missionMark": "das Leben der Menschen zu verändern",
+    "pillars": [
+      {
+        "t": "Motivation",
+        "d": "Wir holen dich ab, wo du stehst, und bleiben dran, wenn es hart wird."
+      },
+      {
+        "t": "Positivität",
+        "d": "Kein Ego, kein Druck. Jeder Fortschritt zählt, egal auf welchem Level."
+      },
+      {
+        "t": "Coaching",
+        "d": "Echte Technik von Trainern mit Wettkampferfahrung, auch Welt- und Europameistern."
+      },
+      {
+        "t": "Gemeinschaft",
+        "d": "Man kommt wegen des Trainings und bleibt wegen der Leute."
+      }
+    ],
+    "values": [
+      {
+        "t": "Keine Nummer.",
+        "d": "Bei uns bist du eine Persönlichkeit, auf deren Wünsche und Ziele wir eingehen."
+      },
+      {
+        "t": "Champions in deiner Ecke.",
+        "d": "Im Muay Thai trainierst du mit mehrfachen Welt- und Europameistern."
+      },
+      {
+        "t": "Jedes Level.",
+        "d": "Vom ersten Probetraining bis zur Wettkampfvorbereitung. Auch für Frauen und Kinder."
+      },
+      {
+        "t": "Immer in Bewegung.",
+        "d": "Das Studio wird ständig erneuert. Als Nächstes: Zugang rund um die Uhr."
+      }
+    ],
+    "milestones": [
+      {
+        "t": "Hausgala",
+        "d": "Eigene Kampfabende mit K1, Boxen und Muay Thai im Studio."
+      },
+      {
+        "t": "Sparrings-Treffen",
+        "d": "Gemeinsames Sparring mit anderen Gyms aus der Region."
+      },
+      {
+        "t": "Wettkämpfer Kids",
+        "d": "Unsere Kids stehen auch im Wettkampf."
+      },
+      {
+        "t": "Gürtel-Vitrine",
+        "d": "Titel aus Kickboxen und Muay Thai. Platz für deinen ist noch da."
+      }
+    ]
+  },
+  "kidsFaq": [
+    {
+      "q": "Ab welchem Alter kann mein Kind anfangen?",
+      "a": "Ab 4 Jahren bei den Minis (4–7). Mit 8 geht es weiter bei den Kids (8–12)."
+    },
+    {
+      "q": "Ist das nicht zu hart für Kinder?",
+      "a": "Nein. Das Training ist altersgerecht und spielerisch. Im Vordergrund stehen Koordination, Selbstvertrauen und Respekt, nicht Härte."
+    },
+    {
+      "q": "Was braucht mein Kind zum ersten Training?",
+      "a": "Bequeme Sportkleidung und etwas zu trinken. Noch keine Handschuhe? Einfach bei der Anmeldung Bescheid geben."
+    },
+    {
+      "q": "Was kostet das Kindertraining?",
+      "a": "Je nach Laufzeit zwischen 55 und 70 € im Monat, Dienstag und Donnerstag inklusive. Das erste Probetraining ist kostenlos."
+    }
+  ]
+}
