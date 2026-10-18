@@ -49,19 +49,24 @@
     <img src="assets/img/sparring.jpg" alt="Zwei Fäuste mit Bandagen berühren sich im Käfig" data-photo="hero">
     <span class="hp-c hp-c1"></span><span class="hp-c hp-c2"></span><span class="hp-c hp-c3"></span><span class="hp-c hp-c4"></span>
     <div class="hero-tag hand">A fight club by<br><b>Studio68, Heddesheim</b></div>
-    <div class="hero-note hand" id="heroNote">hau drauf!</div>
     <div class="bag-hud mono" id="bagHud">
       <div class="bh-big"><b id="hudN">000</b><span>N</span></div>
       <div class="bh-meter"><i id="hudMeter"></i></div>
       <div class="bh-row"><span>SCHLÄGE <b id="hudHits">00</b></span><span>MAX <b id="hudMax">000</b></span><button class="bh-snd" id="sndBtn" aria-pressed="true" title="Ton an/aus">♪</button></div>
+      <div class="bh-rank" id="hudRank"><span>RANG</span><b>—</b></div>
     </div>
   </figure>
   <div class="hero-film" aria-hidden="true"><div class="film-holes"></div><img src="assets/img/trophies.jpg" alt="" data-photo="heroSmall"><div class="film-holes"></div></div>
   <canvas class="bag-canvas" id="bagCanvas" aria-label="3D-Boxsack zum Draufhauen"></canvas>
-  <svg class="scribbles" id="heroScribbles" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path class="scr scr-ink" id="scrFlame" d="" /><path class="scr scr-ink" id="scrArrow" d="" /></svg>
+  <svg class="scribbles" id="heroScribbles" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path class="scr scr-ink" id="scrFlame" d="" /></svg>
+  <div class="bag-hint" id="bagHint" aria-hidden="true">
+    <span class="bk-ring"></span><span class="bk-ring"></span><span class="bk-ring"></span>
+    <svg class="bk-cross" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><path d="M50 0v18M50 82v18M0 50h18M82 50h18"/></svg>
+    <svg class="bk-glove" viewBox="0 0 64 48"><rect x="2" y="13" width="15" height="23" rx="4" class="g-cuff"/><path class="g-stripe" d="M6 13v23"/><path class="g-fist" d="M14 10 Q14 3 23 3 L43 3 Q61 3 61 20 L61 29 Q61 45 43 45 L23 45 Q14 45 14 38 Z"/><path class="g-thumb" d="M29 27 Q41 21 52 28 Q47 35 34 34 Z"/><path class="g-lace" d="M22 9v30"/></svg>
+    <b class="bk-txt mono"><span class="d">KLICK</span><span class="m">TIPP</span> DRAUF!</b>
+  </div>
   <div class="bag-combo hand" id="bagCombo"></div>
   <div class="bag-dmg" id="bagDmg"></div>
-  <div class="bag-pop" id="bagPop" role="status"><span class="mono">// AUSWERTUNG</span><strong>Nicht schlecht.<br>Jetzt in echt?</strong><a class="btn btn-ink" href="#probetraining">Probetraining gratis →</a></div>
   <div class="hero-sticker" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="stkC" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#stkC">1. TRAINING GRATIS ✳ 1. TRAINING GRATIS ✳ 1. TRAINING GRATIS ✳ </textPath></text></svg><b>68</b></div>
   <div class="hero-bottom">
     <a class="btn btn-pink btn-xl" href="#probetraining">Probetraining buchen <span class="arr">⟶</span></a>

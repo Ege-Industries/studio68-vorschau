@@ -83,7 +83,7 @@ function bumpTexture() {
   return t;
 }
 
-export function initBag({ canvas, hero, anchor, onHit, onHover }) {
+export function initBag({ canvas, hero, anchor, onHit, onHover, onPos }) {
   const mob = matchMedia('(max-width: 900px)').matches;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(devicePixelRatio, mob ? 1.75 : 2));
@@ -284,6 +284,7 @@ export function initBag({ canvas, hero, anchor, onHit, onHover }) {
   hero.addEventListener('pointerleave', () => onHover && onHover(false));
 
   let running = true, raf = 0, last = performance.now();
+  const pp = new THREE.Vector3();
   const io = new IntersectionObserver(es => { running = es[0].isIntersecting; if (running) loop(); }, { threshold: 0 });
   io.observe(hero);
   function loop() {
@@ -294,6 +295,10 @@ export function initBag({ canvas, hero, anchor, onHit, onHover }) {
     const dt = Math.min(1 / 30, Math.max(0, (nowT - last) / 1000)); last = nowT; t += dt;
     step(dt);
     renderer.render(scene, camera);
+    if (onPos) {
+      bag.getWorldPosition(pp); pp.project(camera);
+      onPos({ x: (pp.x + 1) / 2 * canvas.clientWidth, y: (1 - pp.y) / 2 * canvas.clientHeight, r: R * rig.scale.x / unit });
+    }
   }
   document.addEventListener('visibilitychange', () => { last = performance.now(); loop(); });
   const ro = new ResizeObserver(() => layout());

@@ -239,10 +239,20 @@ export function initOctagon({ canvas, section, discs, label, onActive }) {
     W = canvas.clientWidth || innerWidth; Hh = canvas.clientHeight || innerHeight;
     renderer.setSize(W, Hh, false); composer.setSize(W, Hh);
     camera.aspect = W / Hh;
-    // Käfig nach rechts (Desktop) bzw. nach oben (Handy) schieben, damit die Karte Platz hat
-    if (mob) camera.setViewOffset(W, Hh, 0, Hh * .2, W, Hh);
+    // Käfig nach rechts (Desktop) bzw. auf dem Handy direkt über die Karte setzen
+    if (mob) { offY = null; dock(); }
     else camera.setViewOffset(W, Hh, -W * .17, 0, W, Hh);
     camera.updateProjectionMatrix();
+  }
+  // Handy: Käfigboden sitzt knapp über der Info-Karte, egal wie hoch der Bildschirm ist
+  const card = section.querySelector('.octa-card');
+  let offY = null;
+  function dock() {
+    const top = card ? card.offsetTop : Hh * .6;
+    const want = Hh / 2 - (top - 14 - W * .28);
+    if (offY !== null && Math.abs(want - offY) < .5) return;
+    offY = offY === null ? want : offY + (want - offY) * .12;
+    camera.setViewOffset(W, Hh, 0, offY, W, Hh); camera.updateProjectionMatrix();
   }
   resize();
   addEventListener('resize', resize);
@@ -296,6 +306,7 @@ export function initOctagon({ canvas, section, discs, label, onActive }) {
     scene.fog.density = .045 * 14.5 / dist;
     camera.position.set(mx * 1.6, dist * (mob ? .3 : .34) + my * -.8 + swing * .5, dist - swing * .8);
     camera.lookAt(0, mob ? 1.2 : 1.9, 0);
+    if (mob) dock();
     composer.render();
     if (label && bannerMeshes[active]) {
       bannerMeshes[active].getWorldPosition(lp); lp.y += .62;

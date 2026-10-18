@@ -3,6 +3,7 @@ import { loadData, now, DAYS, DAYS_LONG, hm, key, addDays, minsOf, matches, canc
 import { mountChrome, initChrome, WA, IG } from './chrome.js';
 import { $, $$, nn, observeReveal, swiper, teamCards, tiltCards, galleryHTML, lightbox, initPrices, hoursHTML, statusHTML, faqHTML, newsCards, articleModal } from './components.js';
 import { initPlan } from './plan.js';
+import { initAnim } from './anim.js';
 
 const page = document.body.dataset.page;
 mountChrome(page);
@@ -16,6 +17,7 @@ const bookLink = id => `./?d=${encodeURIComponent(id)}#probetraining`;
   ({ ueber, kurse, muskelfabrik, kids, kurszeiten, preise, partner, news, presse, kontakt })[page]?.(d);
   ctaBand(d);
   observeReveal();
+  initAnim();
   if (location.hash && !['news', 'presse'].includes(page)) setTimeout(() => { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }, 120);
 })();
 

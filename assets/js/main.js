@@ -4,6 +4,7 @@ import { initPlan } from './plan.js';
 import { initBooking } from './booking.js';
 import { initGenx } from './genx.js';
 import { mountChrome, initChrome } from './chrome.js';
+import { initAnim } from './anim.js';
 import { observeReveal, countUp, swiper, teamCards, tiltCards, galleryHTML, lightbox, initPrices, initVoices, hoursHTML, statusHTML, faqHTML } from './components.js';
 
 mountChrome('home');
@@ -81,13 +82,17 @@ function bell() {
   initGenx(data);
   initLive(data);
   observeReveal(); countUp();
+  initAnim();
   progress(72);
 
   // Hero-Boxsack
   try {
     const { initBag } = await import('./bag.js');
     progress(88);
-    initBag({ canvas: $('#bagCanvas'), hero: $('#top'), anchor: $('#heroPhoto'), onHit: hitFx, onHover: h => $('#cursor').classList.toggle('hit', h) });
+    const hint = $('#bagHint');
+    initBag({ canvas: $('#bagCanvas'), hero: $('#top'), anchor: $('#heroPhoto'), onHit: hitFx, onHover: h => $('#cursor').classList.toggle('hit', h),
+      onPos: ({ x, y, r }) => { hint.style.transform = `translate3d(${x}px, ${y}px, 0)`; hint.style.setProperty('--br', r + 'px'); } });
+    setTimeout(() => hint.classList.add('on'), 1600);
   } catch (e) { console.warn('3D aus', e); }
   placeScribbles(); addEventListener('resize', placeScribbles);
   progress(100);
@@ -119,24 +124,17 @@ function applyPhotos(d) {
 
 // ---------- Kritzeleien am Foto ausrichten ----------
 function placeScribbles() {
-  const hero = $('#top'), svg = $('#heroScribbles'), hr = hero.getBoundingClientRect();
-  const ph = $('#heroPhoto').getBoundingClientRect(), note = $('#heroNote').getBoundingClientRect(), film = $('.hero-film').getBoundingClientRect();
+  const hero = $('#top'), svg = $('#heroScribbles'), hr = hero.getBoundingClientRect(), film = $('.hero-film').getBoundingClientRect();
   svg.setAttribute('viewBox', `0 0 ${hr.width} ${hr.height}`);
-  const L = x => x - hr.left, T = y => y - hr.top;
-  // Pfeil: Notiz → rechter Rand des Sacks
-  const nx = L(note.left) - 10, ny = T(note.top) + note.height * .55;
-  const bx = L(ph.left) + ph.width * (matchMedia('(max-width: 900px)').matches ? .36 : .5) + ph.height * .172 + 12, by = ny - 14;
-  const a = Math.atan2(by - (ny - 34), bx - (nx + bx) / 2), hx = (r, k) => bx + Math.cos(a + r) * k, hy = (r, k) => by + Math.sin(a + r) * k;
-  $('#scrArrow').setAttribute('d', `M${nx} ${ny} Q ${(nx + bx) / 2} ${ny - 34}, ${bx} ${by} M${bx} ${by} L ${hx(Math.PI - .5, 18)} ${hy(Math.PI - .5, 18)} M${bx} ${by} L ${hx(Math.PI + .5, 18)} ${hy(Math.PI + .5, 18)}`);
-  // Flamme links neben dem Filmstreifen
   if (film.width) {
-    const fx = L(film.left) - 46, fy = T(film.top) + film.height * .75;
+    const fx = film.left - hr.left - 46, fy = film.top - hr.top + film.height * .75;
     $('#scrFlame').setAttribute('d', `M${fx} ${fy} c -26 -36 18 -66 6 -104 c 20 26 38 38 26 76 c 18 -18 18 -38 12 -58 c 26 32 26 70 -6 96 c -12 10 -26 6 -38 -10`);
   }
 }
 
 // ---------- Treffer-Effekte ----------
-let hits = 0, maxN = 0, combo = 0, comboT = 0, popShown = false;
+let hits = 0, maxN = 0, combo = 0, comboT = 0, hot = false;
+const RANKS = [[0, 'ROOKIE'], [600, 'AMATEUR'], [850, 'CONTENDER'], [1000, 'CHAMPION']];
 function hitFx({ x, y, newton, s }) {
   thud(s);
   hits++; maxN = Math.max(maxN, newton);
@@ -155,8 +153,14 @@ function hitFx({ x, y, newton, s }) {
   if (navigator.vibrate) try { navigator.vibrate(s > 1.1 ? 28 : 14); } catch {}
   const cEl = $('#bagCombo');
   if (combo >= 2) { cEl.textContent = `COMBO ×${combo}`; cEl.classList.add('on'); clearTimeout(cEl._t); cEl._t = setTimeout(() => cEl.classList.remove('on'), 900); }
-  $('#heroNote').style.opacity = 0; $('#scrArrow').style.opacity = 0;
-  if (hits >= 7 && !popShown) { popShown = true; setTimeout(() => $('#bagPop').classList.add('on'), 500); }
+  $('#bagHint').classList.add('gone');
+  const rank = RANKS.filter(r => maxN >= r[0]).pop()[1], rk = $('#hudRank');
+  if (rk.dataset.r !== rank) { rk.dataset.r = rank; rk.querySelector('b').textContent = rank; rk.classList.remove('up'); void rk.offsetWidth; rk.classList.add('up'); }
+  if (hits >= 6 && !hot) {
+    hot = true;
+    const cta = $('.hero-bottom .btn-xl');
+    cta.classList.add('hot'); cta.firstChild.textContent = matchMedia('(max-width: 900px)').matches ? 'Jetzt in echt? ' : 'Jetzt in echt? Probetraining ';
+  }
 }
 $('#sndBtn').addEventListener('click', e => {
   snd.on = !snd.on; e.currentTarget.setAttribute('aria-pressed', snd.on); e.currentTarget.textContent = snd.on ? '♪ AN' : '♪ AUS';
