@@ -194,13 +194,13 @@ export function initBag({ canvas, hero, anchor, onHit, onHover }) {
     camera.aspect = w / h; camera.updateProjectionMatrix();
     const vh = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     unit = vh / h;
-    const cx = ar.left - hr.left + ar.width * (mob ? .64 : .5);
-    const cy = ar.top - hr.top + ar.height * (mob ? .5 : .55);
-    const hpx = ar.height * (mob ? .8 : .8);
+    const cx = ar.left - hr.left + ar.width * (mob ? .6 : .5);
+    const cy = ar.top - hr.top + ar.height * (mob ? .56 : .55);
+    const hpx = ar.height * (mob ? .66 : .8);
     const s = (hpx * unit) / H;
     rig.scale.setScalar(s);
     const bx = (cx - w / 2) * unit, by = (h / 2 - cy) * unit;
-    const topY = (h / 2) * unit + .6;           // Aufhängung über dem Rand
+    const topY = mob ? (h / 2 - (ar.top - hr.top - 22)) * unit : (h / 2) * unit + .6;   // Handy: über dem Foto, sonst über dem Rand
     rig.position.set(bx, topY, 0);
     const chainLen = (topY - by) / s - H / 2 - strapH;
     bagGroup.position.y = -(chainLen + strapH + H / 2);

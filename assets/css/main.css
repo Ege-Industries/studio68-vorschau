@@ -894,11 +894,11 @@ section { position: relative; }
 @media (max-width: 900px) {
   .sh-h { font-size: clamp(32px, 9.6vw, 44px); }
 
-  .hero { height: 100svh; min-height: 560px; padding: calc(var(--hdr) + 10px) 16px 12px; display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; }
+  .hero { height: 100svh; min-height: 560px; padding: calc(var(--hdr) + 10px) 16px 12px; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr) auto; }
   .cyber-lines { display: none; }
   .hero-kicker { padding: 0; font-size: 10px; }
   .hero-title { margin: 6px 0 0; font-size: min(17.4vw, 9.6svh); line-height: .84; }
-  .hero-photo { position: relative; right: auto; top: auto; width: auto; height: 100%; max-width: 100%; aspect-ratio: 1; justify-self: end; align-self: end; margin: -2svh -4px 6px 0; }
+  .hero-photo { position: relative; right: auto; top: auto; width: min(100%, 46svh); height: auto; aspect-ratio: 1; justify-self: end; align-self: center; margin: 0 0 4px; }
   .hero-tag { display: none; }
   .hero-note { left: 2%; right: auto; top: 30%; font-size: 21px; }
   .hero-film, .scribbles, .hb-meta { display: none; }
