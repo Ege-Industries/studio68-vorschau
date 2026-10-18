@@ -1172,3 +1172,5 @@ section { position: relative; }
 @media (max-width: 560px) { .ab-pillars { grid-template-columns: 1fr; } }
 
 @media (max-width: 900px) { .mbar { left: 0; right: 0; bottom: 0; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); background: var(--ink); gap: 6px; } .mbar .btn { box-shadow: none; } .mbar-i { box-shadow: none; } .ftr { padding-bottom: 110px; } }
+
+[hidden] { display: none !important; }
